@@ -1,0 +1,36 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=3
+
+[application]
+
+config/name="CaptainHoletoothRemastered"
+run/main_scene="res://screens/screen_main_menu/screen_main_menu.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+global="*res://global/global.gd"
+
+[display]
+
+window/size/width=512
+window/size/height=288
+window/size/test_width=1280
+window/size/test_height=720
+window/stretch/mode="2d"
+
+[gdnative]
+
+singletons=[  ]
+
+[rendering]
+
+quality/intended_usage/framebuffer_allocation=0
+environment/default_environment="res://default_env.tres"

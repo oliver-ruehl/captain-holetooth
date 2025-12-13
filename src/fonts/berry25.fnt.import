@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://c55ft886ovlln"
+path="res://.godot/imported/berry25.fnt-28fc56fa2388f71bceb76657f9d326d2.fontdata"
+
+[deps]
+
+source_file="res://src/fonts/berry25.fnt"
+dest_files=["res://.godot/imported/berry25.fnt-28fc56fa2388f71bceb76657f9d326d2.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

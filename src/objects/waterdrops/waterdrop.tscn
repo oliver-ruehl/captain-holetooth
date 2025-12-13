@@ -1,0 +1,197 @@
+[gd_scene load_steps=27 format=3 uid="uid://ccuicfd26acf"]
+
+[ext_resource type="Texture2D" uid="uid://cg30ys67muf33" path="res://src/objects/waterdrops/waterdrop-0001.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://cjrveqady5w16" path="res://src/objects/waterdrops/waterdrop-0002.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dh4d7xru1fxgx" path="res://src/objects/waterdrops/waterdrop-0003.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://da46tmjky8odg" path="res://src/objects/waterdrops/waterdrop-0004.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://cn3dfuqx5vvs" path="res://src/objects/waterdrops/waterdrop-0005.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://dn10vahxvvli4" path="res://src/objects/waterdrops/waterdrop-0006.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://4qdj5vfj6vr2" path="res://src/objects/waterdrops/waterdrop-0007.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://hfgupasrsnt0" path="res://src/objects/waterdrops/waterdrop-0008.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bvolba5hw2o4q" path="res://src/objects/waterdrops/waterdrop-0009.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://b5sqgda4hips5" path="res://src/objects/waterdrops/waterdrop-0010.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://edgg8mpywcfj" path="res://src/objects/waterdrops/waterdrop-0011.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://denmubdanunkt" path="res://src/objects/waterdrops/waterdrop-0012.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://woeyqj7vsyw0" path="res://src/objects/waterdrops/waterdrop-0013.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://c4fujatxsdpe0" path="res://src/objects/waterdrops/waterdrop-0014.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://damp55gwgp01e" path="res://src/objects/waterdrops/waterdrop-0015.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://bok3o2uucg106" path="res://src/objects/waterdrops/waterdrop-0016.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://c6bi3bpm41lnq" path="res://src/objects/waterdrops/waterdrop-0017.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://bepmdandy27dr" path="res://src/objects/waterdrops/waterdrop-0018.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://bcmcxo2527ojr" path="res://src/objects/waterdrops/waterdrop-0019.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://ci8shqv3rahlx" path="res://src/objects/waterdrops/waterdrop-0020.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://dcnyir3716mtg" path="res://src/objects/waterdrops/waterdrop-0021.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://bj4hqonl7rnix" path="res://src/objects/waterdrops/waterdrop-0022.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://o7o4vitm0f6n" path="res://src/objects/waterdrops/waterdrop-0023.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://dj0etu8eu2mp3" path="res://src/objects/waterdrops/waterdrop-0024.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://cxk42hnbpcsxj" path="res://src/objects/waterdrops/waterdrop-0025.png" id="25"]
+
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25")
+}],
+"loop": true,
+"name": &"faster",
+"speed": 25.0
+}]
+
+[node name="waterdrop" type="Node2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.8892)
+sprite_frames = SubResource("1")
+frame = 13

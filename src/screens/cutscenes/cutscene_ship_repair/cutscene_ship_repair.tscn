@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://debmd24lq66ae"]
+
+[ext_resource type="Texture2D" uid="uid://bhp8q2lq4pjag" path="res://src/screens/cutscenes/cutscene_ship_repair/cutscene_ship_repair.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://bds2b00oupc0e" path="res://src/audio/music_player/music_player.tscn" id="4"]
+
+[sub_resource type="Animation" id="1"]
+length = 20.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cutscene_ship_repair:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 10, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l776d"]
+_data = {
+&"intro": SubResource("1")
+}
+
+[node name="cutscene_ship_repair" type="TextureRect"]
+
+[node name="skipbutton" type="TextureButton" parent="."]
+layout_mode = 0
+
+[node name="click_to_skip_label" type="Label" parent="skipbutton"]
+layout_mode = 0
+text = "Click to skip"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="cutscene_ship_repair" type="Sprite2D" parent="."]
+texture = ExtResource("3")
+centered = false
+hframes = 4
+
+[node name="animation_player" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_l776d")
+}
+autoplay = "intro"
+
+[node name="music_player" parent="." instance=ExtResource("4")]
+
+[connection signal="pressed" from="skipbutton" to="." method="_on_skipbutton_pressed"]

@@ -1,0 +1,125 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://screens/screen_main_menu/menu_gui.gd" type="Script" id=1]
+[ext_resource path="res://screens/screen_main_menu/gfx/texture-button-character-card.png" type="Texture" id=2]
+[ext_resource path="res://screens/screen_main_menu/gfx/splash_screen_lochzahn_single_scn1.png" type="Texture" id=3]
+[ext_resource path="res://screens/screen_main_menu/gfx/scn1_menu_gametitle_EN.png" type="Texture" id=4]
+[ext_resource path="res://screens/screen_main_menu/gfx/scn1_menu_bg.png" type="Texture" id=5]
+
+[node name="screen_main_menu" type="Node2D"]
+
+[node name="menu_gui" type="Control" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 1 )
+
+[node name="button_start_game" type="Button" parent="menu_gui" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 336.0
+margin_top = 176.0
+margin_right = 480.0
+margin_bottom = 208.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "START"
+flat = false
+align = 1
+
+[node name="button_options" type="Button" parent="menu_gui" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 336.0
+margin_top = 224.0
+margin_right = 480.0
+margin_bottom = 256.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "OPTIONS"
+flat = false
+align = 1
+
+[node name="texture-button-character-card" type="TextureButton" parent="menu_gui" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 256.0
+margin_top = 176.0
+margin_right = 320.0
+margin_bottom = 258.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 2 )
+
+[node name="screen_main_menu_art" type="Sprite" parent="." index="1"]
+
+_sections_unfolded = [ "Z Index" ]
+
+[node name="splash_screen_lochzahn_single_scn1" type="Sprite" parent="screen_main_menu_art" index="0"]
+
+position = Vector2( 240, 152 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="scn1_menu_gametitle_EN" type="Sprite" parent="screen_main_menu_art" index="1"]
+
+position = Vector2( 360, 88 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="scn1_menu_bg" type="Sprite" parent="screen_main_menu_art" index="2"]
+
+position = Vector2( 256, 144 )
+z_index = -1
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Z Index" ]
+
+[connection signal="pressed" from="menu_gui/button_start_game" to="menu_gui" method="_on_button_start_game_pressed"]
+
+[connection signal="pressed" from="menu_gui/button_options" to="menu_gui" method="_on_button_options_pressed"]
+
+

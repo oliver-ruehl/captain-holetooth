@@ -1,0 +1,122 @@
+[gd_scene load_steps=11 format=3 uid="uid://kc7w15occ5n"]
+
+[ext_resource type="PackedScene" uid="uid://bds2b00oupc0e" path="res://src/audio/music_player/music_player.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://cotwaps3i71sx" path="res://src/audio/sfx/sfx.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://cawu8ux7mhxj3" path="res://src/levels/minigames/yankandy/pin.tscn" id="5"]
+[ext_resource type="Texture2D" uid="uid://c7ioxt5mu6011" path="res://src/levels/minigames/yankandy/wooden-box-bg.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://jeolmbs56gv" path="res://src/levels/minigames/yankandy/wooden-box-cup-front.png" id="7"]
+[ext_resource type="PackedScene" uid="uid://p1tsrio6whn0" path="res://src/actors/yan/yan.tscn" id="8"]
+
+[sub_resource type="RectangleShape2D" id="28"]
+size = Vector2(36.4858, 59.0118)
+
+[sub_resource type="RectangleShape2D" id="29"]
+size = Vector2(29.3084, 32.4146)
+
+[sub_resource type="RectangleShape2D" id="30"]
+size = Vector2(14.05906, 31.5964)
+
+[sub_resource type="RectangleShape2D" id="31"]
+size = Vector2(29.3082, 20)
+
+[node name="board_1" type="RigidBody2D"]
+mass = 800.0
+gravity_scale = 0.0
+freeze = true
+contact_monitor = true
+
+[node name="music_player" parent="." instance=ExtResource("2")]
+
+[node name="sfx" parent="." instance=ExtResource("4")]
+
+[node name="pins" type="Area2D" parent="."]
+z_index = 1
+position = Vector2(4, 44)
+gravity = 98.0
+
+[node name="pin" parent="pins" instance=ExtResource("5")]
+position = Vector2(307, 192)
+
+[node name="secret_pin" parent="pins" instance=ExtResource("5")]
+position = Vector2(382, 406)
+
+[node name="pin2" parent="pins" instance=ExtResource("5")]
+position = Vector2(205, 515)
+
+[node name="pin3" parent="pins" instance=ExtResource("5")]
+position = Vector2(83, 332)
+
+[node name="pin5" parent="pins" instance=ExtResource("5")]
+position = Vector2(379, 261)
+
+[node name="pin6" parent="pins" instance=ExtResource("5")]
+position = Vector2(335, 491)
+
+[node name="pin7" parent="pins" instance=ExtResource("5")]
+position = Vector2(131, 428)
+
+[node name="pin8" parent="pins" instance=ExtResource("5")]
+position = Vector2(243, 307)
+
+[node name="TextureFrame" type="TextureRect" parent="."]
+physics_interpolation_mode = 0
+texture = ExtResource("6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(13, 449)
+polygon = PackedVector2Array(-7, 80, -15, 0, -15, 548, 497, 548, 497, 8, 489, 80, 489, 544, 401, 544, 401, 500, 385, 492, 367.392, 488.226, 377, 500, 377, 544, 321, 544, 321, 504, 305, 496, 301.038, 497.62, 305, 504, 305, 544, 265, 544, 257, 532, 257, 504, 270.378, 496.216, 271.041, 483.943, 263.744, 474.655, 257, 480, 257, 488, 257, 496, 209, 496, 209, 488, 209, 480, 204.699, 473.992, 193.421, 483.279, 193, 496, 209, 504, 209, 532, 201, 544, 177, 544, 177, 508, 169, 500, 153, 508, 153, 544, 97, 544, 97, 492, 75, 501, 73, 544, -7, 544)
+
+[node name="cup_front" type="Sprite2D" parent="."]
+position = Vector2(256, 510)
+texture = ExtResource("7")
+
+[node name="Yan" parent="." instance=ExtResource("8")]
+position = Vector2(55, 119)
+
+[node name="Sprite" parent="Yan" index="0"]
+position = Vector2(386, -41)
+frame = 0
+
+[node name="pockets" type="Area2D" parent="."]
+position = Vector2(35, 71)
+gravity = 98.0
+
+[node name="pocket1" type="Area2D" parent="pockets"]
+position = Vector2(45, 64)
+gravity = 98.0
+
+[node name="pocket1" type="CollisionShape2D" parent="pockets/pocket1"]
+position = Vector2(54, 505)
+shape = SubResource("28")
+
+[node name="pocket2" type="Area2D" parent="pockets"]
+position = Vector2(95, 65)
+gravity = 98.0
+
+[node name="pocket2" type="CollisionShape2D" parent="pockets/pocket2"]
+position = Vector2(24, 453)
+shape = SubResource("29")
+
+[node name="pocket3" type="Area2D" parent="pockets"]
+position = Vector2(207, 46)
+gravity = 98.0
+
+[node name="pocket3" type="CollisionShape2D" parent="pockets/pocket3"]
+position = Vector2(127, 469)
+shape = SubResource("30")
+
+[node name="pocket4" type="Area2D" parent="pockets"]
+position = Vector2(160, 153)
+gravity = 98.0
+
+[node name="pocket4" type="CollisionShape2D" parent="pockets/pocket4"]
+position = Vector2(121, 371)
+shape = SubResource("31")
+
+[connection signal="body_entered" from="." to="." method="_on_box_body_enter"]
+[connection signal="body_entered" from="pockets/pocket1" to="pockets/pocket1" method="_on_pocket1_body_enter"]
+[connection signal="body_entered" from="pockets/pocket2" to="pockets/pocket2" method="_on_pocket2_body_enter"]
+[connection signal="body_entered" from="pockets/pocket3" to="pockets/pocket3" method="_on_pocket3_body_enter"]
+[connection signal="body_entered" from="pockets/pocket4" to="pockets/pocket4" method="_on_pocket4_body_enter"]
+
+[editable path="Yan"]

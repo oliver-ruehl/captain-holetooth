@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2e7q0wybkth5"]
+
+[ext_resource type="Script" uid="uid://c0rmp62fnbjdc" path="res://src/screens/character-cards/character-cards-main-node.gd" id="1"]
+[ext_resource type="Script" uid="uid://bta51u4mn8ied" path="res://src/screens/character-cards/character_card_container.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://crgao0xefhp34" path="res://src/screens/character-cards/character-card-bg-pattern.png" id="3"]
+
+[node name="character-cards" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="BackgroundTexture" type="TextureRect" parent="."]
+physics_interpolation_mode = 0
+modulate = Color(0.211258, 0.277344, 0.233975, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3")
+stretch_mode = 2
+
+[node name="card-container-scrollable" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="card_container" type="Control" parent="card-container-scrollable"]
+layout_mode = 2
+script = ExtResource("2")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]

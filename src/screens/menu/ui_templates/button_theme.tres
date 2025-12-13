@@ -1,0 +1,24 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dybgh3obkovvu"]
+
+[ext_resource type="FontFile" uid="uid://7lbudyckrfpw" path="res://src/fonts/berry12.fnt" id="1"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(0.439216, 0.278431, 0.278431, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="2"]
+border_blend = true
+
+[resource]
+default_font = ExtResource("1")
+Button/colors/font_color = Color(0.878431, 0.878431, 0.878431, 1)
+Button/colors/font_color_disabled = Color(0.9, 0.9, 0.9, 0.2)
+Button/colors/font_color_hover = Color(0.941176, 0.941176, 0.941176, 1)
+Button/colors/font_color_pressed = Color(1, 1, 1, 1)
+Button/constants/hseparation = 2
+Button/fonts/font = ExtResource("1")
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = null
+Button/styles/normal = SubResource("1")
+Button/styles/pressed = SubResource("2")

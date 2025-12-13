@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://8mrcyju0ncsg"
+path="res://.godot/imported/microstyle_font16.fnt-3c60157707a328cd2ddaa6a1403752d4.fontdata"
+
+[deps]
+
+source_file="res://src/fonts/microstyle_font16.fnt"
+dest_files=["res://.godot/imported/microstyle_font16.fnt-3c60157707a328cd2ddaa6a1403752d4.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

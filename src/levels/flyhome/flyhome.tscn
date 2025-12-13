@@ -1,0 +1,317 @@
+[gd_scene load_steps=14 format=3 uid="uid://drojb2ehxm5hd"]
+
+[ext_resource type="PackedScene" path="res://src/levels/flyhome/player_ship/player_ship.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://dua5urwt6xgkq" path="res://src/levels/flyhome/scn5-ship-bg_gradient.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bndb1cbmsob1c" path="res://src/levels/flyhome/scn_4_scroll_bg_fg_2.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bpffq0g6barmy" path="res://src/levels/flyhome/scroll_bg_cloud_3.png" id="6"]
+[ext_resource type="PackedScene" path="res://src/screens/hud/hud.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://bds2b00oupc0e" path="res://src/audio/music_player/music_player.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://cotwaps3i71sx" path="res://src/audio/sfx/sfx.tscn" id="10"]
+[ext_resource type="PackedScene" uid="uid://c46kksksftrtm" path="res://src/actors/enemies/sugarcubes_from_hell/sugarcubes_from_hell.tscn" id="11"]
+[ext_resource type="PackedScene" uid="uid://b2hpn0t7afwvb" path="res://src/actors/enemies/soap_bubble/soap_bubble.tscn" id="12"]
+[ext_resource type="PackedScene" uid="uid://w72xwsts2hgw" path="res://src/actors/enemies/tornado/tornado.tscn" id="13"]
+[ext_resource type="PackedScene" path="res://src/levels/flyhome/goal_line/goal_line.tscn" id="14"]
+
+[sub_resource type="Animation" id="1"]
+length = 25.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 21.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.556793, 0.649815, 0.695312, 1), Color(0.0778656, 0.0923227, 0.246094, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1v2fd"]
+_data = {
+&"day_to_night": SubResource("1")
+}
+
+[node name="flyhome5" type="Node2D"]
+
+[node name="rail" type="Node2D" parent="."]
+
+[node name="player" parent="rail" instance=ExtResource("3")]
+
+[node name="camera" type="Camera2D" parent="rail"]
+anchor_mode = 0
+
+[node name="parallax" type="ParallaxBackground" parent="."]
+layer = -1
+
+[node name="sky" type="ParallaxLayer" parent="parallax"]
+
+[node name="skygradient" type="Sprite2D" parent="parallax/sky"]
+modulate = Color(0.0778656, 0.0923227, 0.246094, 1)
+texture = ExtResource("4")
+centered = false
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="parallax/sky/skygradient"]
+libraries = {
+&"": SubResource("AnimationLibrary_1v2fd")
+}
+autoplay = "day_to_night"
+
+[node name="mountains_back" type="ParallaxLayer" parent="parallax"]
+
+[node name="Sprite1" type="Sprite2D" parent="parallax/mountains_back"]
+modulate = Color(0.274933, 0.405625, 0.492188, 1)
+texture = ExtResource("5")
+
+[node name="bg_layer7_small_clouds" type="ParallaxLayer" parent="parallax"]
+
+[node name="Sprite5" type="Sprite2D" parent="parallax/bg_layer7_small_clouds"]
+texture = ExtResource("6")
+
+[node name="field_middle_green_hills" type="ParallaxLayer" parent="parallax"]
+
+[node name="Sprite1" type="Sprite2D" parent="parallax/field_middle_green_hills"]
+modulate = Color(0.196382, 0.296875, 0.160034, 1)
+texture = ExtResource("5")
+flip_h = true
+
+[node name="bg_layer4_clouds" type="ParallaxLayer" parent="parallax"]
+
+[node name="Sprite" type="Sprite2D" parent="parallax/bg_layer4_clouds"]
+modulate = Color(0.382812, 0.218323, 0.303138, 0.486353)
+texture = ExtResource("6")
+
+[node name="Sprite5" type="Sprite2D" parent="parallax/bg_layer4_clouds"]
+modulate = Color(0.554688, 0.468018, 0.470049, 0.655765)
+texture = ExtResource("6")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="parallax"]
+layer = 1
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="parallax/ParallaxBackground"]
+
+[node name="Sprite" type="Sprite2D" parent="parallax/ParallaxBackground/ParallaxLayer"]
+modulate = Color(0.128906, 0.127431, 0.0911407, 1)
+texture = ExtResource("5")
+
+[node name="hud" parent="." instance=ExtResource("7")]
+
+[node name="music_player" parent="." instance=ExtResource("8")]
+
+[node name="sfx" parent="." instance=ExtResource("10")]
+
+[node name="entities" type="Node2D" parent="."]
+
+[node name="enemies" type="Node2D" parent="entities"]
+
+[node name="sugarcubes" type="Node2D" parent="entities/enemies"]
+
+[node name="sugarcube_0" parent="entities/enemies/sugarcubes" instance=ExtResource("11")]
+
+[node name="sugarcube_1" parent="entities/enemies/sugarcubes" instance=ExtResource("11")]
+
+[node name="sugarcube_11" parent="entities/enemies/sugarcubes" instance=ExtResource("11")]
+
+[node name="sugarcube_12" parent="entities/enemies/sugarcubes" instance=ExtResource("11")]
+
+[node name="sugarcube_13" parent="entities/enemies/sugarcubes" instance=ExtResource("11")]
+
+[node name="sugarcube_14" parent="entities/enemies/sugarcubes" instance=ExtResource("11")]
+
+[node name="sugarcube_15" parent="entities/enemies/sugarcubes" instance=ExtResource("11")]
+
+[node name="sugarcube_2" parent="entities/enemies/sugarcubes" instance=ExtResource("11")]
+
+[node name="sugarcube_3" parent="entities/enemies/sugarcubes" instance=ExtResource("11")]
+
+[node name="sugarcube_4" parent="entities/enemies/sugarcubes" instance=ExtResource("11")]
+
+[node name="sugarcube_5" parent="entities/enemies/sugarcubes" instance=ExtResource("11")]
+
+[node name="sugarcube_8" parent="entities/enemies/sugarcubes" instance=ExtResource("11")]
+
+[node name="sugarcube_9" parent="entities/enemies/sugarcubes" instance=ExtResource("11")]
+
+[node name="sugarcube_10" parent="entities/enemies/sugarcubes" instance=ExtResource("11")]
+
+[node name="sugarcube_6" parent="entities/enemies/sugarcubes" instance=ExtResource("11")]
+
+[node name="sugarcube_16" parent="entities/enemies/sugarcubes" instance=ExtResource("11")]
+
+[node name="sugarcube_17" parent="entities/enemies/sugarcubes" instance=ExtResource("11")]
+
+[node name="sugarcube_8 2" parent="entities/enemies/sugarcubes" instance=ExtResource("11")]
+
+[node name="sugarcube_7" parent="entities/enemies/sugarcubes" instance=ExtResource("11")]
+
+[node name="soap_bubbles" type="Node2D" parent="entities/enemies"]
+
+[node name="soap_bubble_0" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_9" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_10" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_11" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_12" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_13" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_14" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_15" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_16" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_17" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_18" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_19" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_20" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_21" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_1" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_2" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_26" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_27" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_28" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_29" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_37" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_38" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_39" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_40" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_41" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_42" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_43" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_44" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_45" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_46" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_47" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_48" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_49" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_50" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_51" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_52" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_53" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_54" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_55" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_56" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_30" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_31" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_32" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_33" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_34" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_35" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_36" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_22" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_23" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_3" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_24" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_25" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_61" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_5" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_7" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_6" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_7 2" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_73" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_57 2" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_573" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_577 4" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_57710" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_5775" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_5781" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_5776 2" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_5776 3" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_5776" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_5777" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_5778" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_5779" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_5780" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_579" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_580" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_581" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_582" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_583" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="soap_bubble_584" parent="entities/enemies/soap_bubbles" instance=ExtResource("12")]
+
+[node name="pickups" type="Node2D" parent="entities"]
+
+[node name="tornadoes" type="Node2D" parent="entities/pickups"]
+
+[node name="tornado" parent="entities/pickups/tornadoes" instance=ExtResource("13")]
+
+[node name="tornado2" parent="entities/pickups/tornadoes" instance=ExtResource("13")]
+
+[node name="tornado1" parent="entities/pickups/tornadoes" instance=ExtResource("13")]
+
+[node name="tornado3" parent="entities/pickups/tornadoes" instance=ExtResource("13")]
+
+[node name="goal_line" parent="entities" instance=ExtResource("14")]

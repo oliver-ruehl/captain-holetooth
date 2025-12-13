@@ -1,0 +1,141 @@
+[gd_scene load_steps=13 format=3 uid="uid://c46kksksftrtm"]
+
+[ext_resource type="Texture2D" uid="uid://dlam6ob5r1eyu" path="res://src/actors/enemies/sugarcubes_from_hell/sugarcubes_from_hell_01.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bnxs4gvk0x82j" path="res://src/actors/enemies/sugarcubes_from_hell/sugarcubes_from_hell_02.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://22awux6vm54s" path="res://src/actors/enemies/sugarcubes_from_hell/sugarcubes_from_hell_03.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://6bnxog8nd8n1" path="res://src/actors/enemies/sugarcubes_from_hell/sugarcubes_from_hell_04.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bm8rgsh0bykc8" path="res://src/actors/enemies/sugarcubes_from_hell/sugarcubes_from_hell_05.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://rdlwcvai3tex" path="res://src/actors/enemies/sugarcubes_from_hell/sugarcubes_from_hell_06.png" id="7"]
+[ext_resource type="PackedScene" path="res://src/audio/sfx/sfx.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://cjokejcaqcf6p" path="res://src/actors/enemies/explosion_particle.tscn" id="9"]
+
+[sub_resource type="SpriteFrames" id="2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.5
+}]
+
+[sub_resource type="Animation" id="3"]
+length = 2.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:visibility/visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:monitorable")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("explosion_particle:config/emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="4"]
+length = 2.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:extra_motion")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-1.86607, -1.86607),
+"update": 0,
+"values": [Vector2(0, -200), Vector2(0, 200)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hx1h2"]
+_data = {
+&"explode": SubResource("3"),
+&"zigzag": SubResource("4")
+}
+
+[node name="sugarcube" type="Area2D"]
+monitoring = false
+monitorable = false
+gravity = 98.0
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("2")
+frame = 2
+
+[node name="collision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(2.87218, -21.0608, -9.88585, -21.6407, -21.716, -17.9292, -23.5717, 0.975838, -3.7388, 15.4736, 9.71513, 10.7183, 20.5015, 1.67173, 18.4138, -16.5375)
+
+[node name="shoot_from" type="Node2D" parent="."]
+
+[node name="visibility" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-30, -30, 300, 60)
+
+[node name="anim_player" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_hx1h2")
+}
+
+[node name="sfx" parent="." instance=ExtResource("8")]
+
+[node name="explosion_particle" parent="." instance=ExtResource("9")]
+
+[connection signal="area_entered" from="." to="." method="_on_sugarcube_area_enter"]
+[connection signal="screen_entered" from="visibility" to="." method="_on_visibility_enter_screen"]
+[connection signal="screen_exited" from="visibility" to="." method="_on_visibility_exit_screen"]

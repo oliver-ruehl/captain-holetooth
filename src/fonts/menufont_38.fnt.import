@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://bsbn3dg8ko36x"
+path="res://.godot/imported/menufont_38.fnt-1446aca878591d084f1b3312a5f2816b.fontdata"
+
+[deps]
+
+source_file="res://src/fonts/menufont_38.fnt"
+dest_files=["res://.godot/imported/menufont_38.fnt-1446aca878591d084f1b3312a5f2816b.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

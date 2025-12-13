@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://b430a6ccmqm1y"
+path="res://.godot/imported/smallif_16.fnt-c804e71a936933dd3512cb8e9d2894c0.fontdata"
+
+[deps]
+
+source_file="res://src/fonts/smallif_16.fnt"
+dest_files=["res://.godot/imported/smallif_16.fnt-c804e71a936933dd3512cb8e9d2894c0.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

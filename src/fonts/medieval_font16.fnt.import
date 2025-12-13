@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://qojj32q7w7nh"
+path="res://.godot/imported/medieval_font16.fnt-2c4c8ea14e0baf2c05d074c1b472700e.fontdata"
+
+[deps]
+
+source_file="res://src/fonts/medieval_font16.fnt"
+dest_files=["res://.godot/imported/medieval_font16.fnt-2c4c8ea14e0baf2c05d074c1b472700e.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://cuie7hhjirdk6"
+path="res://.godot/imported/menufont_16.fnt-1627dc6225e277aa56a16ce403b2d016.fontdata"
+
+[deps]
+
+source_file="res://src/fonts/menufont_16.fnt"
+dest_files=["res://.godot/imported/menufont_16.fnt-1627dc6225e277aa56a16ce403b2d016.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

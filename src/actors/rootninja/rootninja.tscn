@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdhn6ydtsa82h"]
+
+[ext_resource type="Texture2D" uid="uid://cq1avkp22w28p" path="res://src/actors/rootninja/rootninja-static.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://d27870g7vxjyx" path="res://src/objects/torch/light.png" id="3"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(23.586, 22.9338)
+
+[sub_resource type="Animation" id="2"]
+length = 5.0
+loop_mode = 1
+step = 0.1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xognm"]
+_data = {
+&"particle-attractor-animation": SubResource("2")
+}
+
+[node name="rootninja" type="Area2D" groups=["actors"]]
+gravity = 98.0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("1")
+
+[node name="Light2D" type="PointLight2D" parent="."]
+scale = Vector2(1e-05, 1e-05)
+color = Color(0.898438, 0.630617, 0.119324, 0.266222)
+energy = 58.1834
+blend_mode = 2
+texture = ExtResource("3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xognm")
+}
+autoplay = "particle-attractor-animation"
+
+[connection signal="body_entered" from="." to="." method="_on_Yan_body_enter"]
+[connection signal="body_exited" from="." to="." method="_on_Yan_body_exit"]

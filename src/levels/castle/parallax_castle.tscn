@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlts2206u1ljm"]
+
+[ext_resource type="Texture2D" uid="uid://dua5urwt6xgkq" path="res://src/levels/flyhome/scn5-ship-bg_gradient.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://dhcnlsb1bcnk5" path="res://src/levels/forest/art/scroll_bg_cloud_1.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://brijh4dnihvw8" path="res://src/levels/forest/art/scroll_bg_cloud_2.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bpffq0g6barmy" path="res://src/levels/flyhome/scroll_bg_cloud_3.png" id="4"]
+
+[node name="parallax_bg_scn5" type="ParallaxBackground"]
+layer = -1
+
+[node name="sky" type="ParallaxLayer" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="sky"]
+modulate = Color(0.320312, 0.106354, 0.191603, 1)
+texture = ExtResource("1")
+centered = false
+
+[node name="clouds" type="ParallaxLayer" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="clouds"]
+modulate = Color(1, 0.699219, 0.699219, 0.562824)
+texture = ExtResource("2")
+centered = false
+
+[node name="Sprite 2" type="Sprite2D" parent="clouds"]
+modulate = Color(1, 0.765625, 0.765625, 1)
+texture = ExtResource("2")
+centered = false
+
+[node name="Sprite 3" type="Sprite2D" parent="clouds"]
+modulate = Color(0.902344, 0.845947, 0.845947, 1)
+texture = ExtResource("3")
+centered = false
+
+[node name="Sprite 4" type="Sprite2D" parent="clouds"]
+modulate = Color(0.964966, 0.839844, 1, 1)
+texture = ExtResource("3")
+centered = false
+
+[node name="Sprite 5" type="Sprite2D" parent="clouds"]
+modulate = Color(1, 0.605469, 0.605469, 0.22949)
+texture = ExtResource("4")
+centered = false
+
+[node name="Sprite 6" type="Sprite2D" parent="clouds"]
+texture = ExtResource("4")
+centered = false

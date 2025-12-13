@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://bwesnevepk6k"
+path="res://.godot/imported/newsgeek16.fnt-dc75da25d43a07be2237e3d325355c7d.fontdata"
+
+[deps]
+
+source_file="res://src/fonts/newsgeek16.fnt"
+dest_files=["res://.godot/imported/newsgeek16.fnt-dc75da25d43a07be2237e3d325355c7d.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

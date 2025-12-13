@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct4jlormo05ou"]
+
+[ext_resource type="Texture2D" uid="uid://vd6nt4yrnfc6" path="res://src/levels/flyhome/goal_line/art/goal.png" id="2"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(60.9602, 411.33)
+
+[node name="goal_line" type="Area2D" groups=["goal"]]
+gravity = 98.0
+
+[node name="sprite" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.174863)
+texture = ExtResource("2")
+offset = Vector2(32, 200)
+region_rect = Rect2(0, 0, 64, 400)
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource("1")
+
+[connection signal="area_entered" from="." to="." method="_on_goal_line_area_enter"]

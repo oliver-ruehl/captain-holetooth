@@ -1,0 +1,166 @@
+[gd_scene load_steps=9 format=3 uid="uid://cahcvncoxrk6f"]
+
+[ext_resource type="Texture2D" uid="uid://drn2sunumtyqj" path="res://src/actors/enemies/forest_crawler/forest_crawler.png" id="2"]
+[ext_resource type="PackedScene" uid="uid://bhbjcbadx3ufa" path="res://src/persist.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://src/audio/sfx/sfx.tscn" id="5"]
+
+[sub_resource type="Animation" id="2"]
+length = 6.0
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:visibility/self_opacity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3.58422, 4.33851),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Particles2D:config/emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.47394),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3.20357, 5.07305),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_pre_explode"
+}, {
+"args": [],
+"method": &"_die"
+}]
+}
+
+[sub_resource type="Animation" id="3"]
+length = 6.75
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75, 1.5, 2.25, 3, 3.75, 4.5, 5.25, 6, 6.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [5, 6, 5, 6, 5, 6, 7, 6, 7, 5]
+}
+
+[sub_resource type="Animation" id="6"]
+length = 2.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [8, 8]
+}
+
+[sub_resource type="Animation" id="4"]
+length = 2.0
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_chs4i"]
+_data = {
+&"explode": SubResource("2"),
+&"idle": SubResource("3"),
+&"turn": SubResource("6"),
+&"walk": SubResource("4")
+}
+
+[node name="enemy" type="RigidBody2D"]
+
+[node name="enabler" type="VisibilityEnabler2D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+transform/pos = Vector2(16.2569, 11.0034)
+transform/scale = Vector2(23.5056, 10.8629)
+rect = Rect2(-10, -10, 20, 20)
+enabler/pause_animations = true
+enabler/freeze_bodies = true
+enabler/pause_particles = true
+enabler/pause_animated_sprites = true
+enabler/process_parent = false
+enabler/fixed_process_parent = false
+script = null
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_chs4i")
+}
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2")
+hframes = 9
+frame = 8
+
+[node name="collision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(11.8596, -12.9618, 18.5539, -2.49722, 10.1668, 17.6624, -2.29831, 17.7394, -17.4565, -0.188866, -11.224, -13.1157)
+
+[node name="raycast_left" type="RayCast2D" parent="."]
+
+[node name="raycast_right" type="RayCast2D" parent="."]
+
+[node name="Particles2D" type="GPUParticles2D" parent="."]
+
+[node name="persist" parent="." instance=ExtResource("4")]
+
+[node name="sfx" parent="." instance=ExtResource("5")]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://g6aa3qek3b2j"]
+
+[ext_resource type="Texture2D" uid="uid://vd6nt4yrnfc6" path="res://src/levels/flyhome/goal_line/art/goal.png" id="2"]
+
+[node name="goal_line" type="Area2D"]
+gravity = 98.0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2")
+offset = Vector2(32, 200)
+region_rect = Rect2(0, 0, 64, 400)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-2.75539, 2.12119, 75.1469, -7.56158, 75.034, 407.416, -30.0839, 410.357)
+
+[connection signal="area_entered" from="." to="." method="_on_goal_line_area_enter"]
+[connection signal="body_entered" from="." to="." method="_on_goal_line_body_enter"]

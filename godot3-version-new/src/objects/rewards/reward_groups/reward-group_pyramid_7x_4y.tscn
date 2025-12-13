@@ -1,0 +1,82 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://objects/rewards/reward.tscn" type="PackedScene" id=1]
+
+[node name="reward_group_ pyramid_7x_4y" type="Area2D"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="reward3 2" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 171.21, 162.34 )
+
+[node name="reward36" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 211.21, 162.34 )
+
+[node name="reward37" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 211.21, 122.34 )
+
+[node name="reward34" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 171.21, 122.34 )
+
+[node name="reward33" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 131.21, 162.34 )
+
+[node name="reward38" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 251.21, 162.34 )
+
+[node name="reward39" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 291.21, 162.34 )
+
+[node name="reward40" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 251.21, 122.34 )
+
+[node name="reward41" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 291.21, 122.34 )
+
+[node name="reward42" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 331.21, 162.34 )
+
+[node name="reward43" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 251.21, 82.34 )
+
+[node name="reward44" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 211.21, 82.34 )
+
+[node name="reward45" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 171.21, 82.34 )
+
+[node name="reward46" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 131.21, 122.34 )
+
+[node name="reward47" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 91.21, 162.34 )
+
+[node name="reward48" parent="." instance=ExtResource( 1 )]
+
+position = Vector2( 211.21, 42.34 )
+
+

@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7ngctwxv3e37"]
+
+[ext_resource type="Texture2D" uid="uid://dua5urwt6xgkq" path="res://src/levels/flyhome/scn5-ship-bg_gradient.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://bndb1cbmsob1c" path="res://src/levels/flyhome/scn_4_scroll_bg_fg_2.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bpffq0g6barmy" path="res://src/levels/flyhome/scroll_bg_cloud_3.png" id="3"]
+
+[sub_resource type="Animation" id="1"]
+length = 78.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 75.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.556793, 0.649815, 0.695312, 1), Color(0.0778656, 0.0923227, 0.246094, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bbq3q"]
+_data = {
+&"day_to_night": SubResource("1")
+}
+
+[node name="parallax" type="ParallaxBackground"]
+layer = -1
+
+[node name="sky" type="ParallaxLayer" parent="."]
+
+[node name="skygradient" type="Sprite2D" parent="sky"]
+modulate = Color(0.0778656, 0.0923227, 0.246094, 1)
+texture = ExtResource("1")
+centered = false
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="sky/skygradient"]
+libraries = {
+&"": SubResource("AnimationLibrary_bbq3q")
+}
+autoplay = "day_to_night"
+
+[node name="mountains_back" type="ParallaxLayer" parent="."]
+
+[node name="Sprite1" type="Sprite2D" parent="mountains_back"]
+modulate = Color(1, 0.753845, 0.574219, 1)
+texture = ExtResource("2")
+
+[node name="bg_layer7" type="ParallaxLayer" parent="."]
+
+[node name="Sprite5" type="Sprite2D" parent="bg_layer7"]
+texture = ExtResource("3")
+
+[node name="field_middle" type="ParallaxLayer" parent="."]
+
+[node name="Sprite1" type="Sprite2D" parent="field_middle"]
+modulate = Color(0.173932, 0.296875, 0.160034, 1)
+texture = ExtResource("2")
+flip_h = true
+
+[node name="bg_layer4" type="ParallaxLayer" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="bg_layer4"]
+texture = ExtResource("3")
+
+[node name="Sprite5" type="Sprite2D" parent="bg_layer4"]
+texture = ExtResource("3")

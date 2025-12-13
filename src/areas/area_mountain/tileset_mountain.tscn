@@ -1,0 +1,154 @@
+[gd_scene load_steps=2 format=3 uid="uid://8dgetb4ro87s"]
+
+[ext_resource type="Texture2D" uid="uid://cdlh6tx58l0r1" path="res://src/areas/area_mountain/tiles_mountain.png" id="1"]
+
+[node name="Node" type="Node"]
+
+[node name="floor" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="collision" type="StaticBody2D" parent="floor"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="floor/collision"]
+position = Vector2(-262, 40)
+polygon = PackedVector2Array(32, -24, 32, 32, -32, 32, -32, -24)
+
+[node name="edge" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+region_rect = Rect2(64, 0, 64, 64)
+
+[node name="collision" type="StaticBody2D" parent="edge"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="edge/collision"]
+position = Vector2(182, 86)
+polygon = PackedVector2Array(-32, -24, 24, -24, 24, 32, -32, 32)
+
+[node name="wall" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+region_rect = Rect2(64, 64, 64, 64)
+
+[node name="collision" type="StaticBody2D" parent="wall"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="wall/collision"]
+position = Vector2(381, 55)
+polygon = PackedVector2Array(-32, -32, 24, -32, 24, 32, -32, 32)
+
+[node name="wall_deco" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+region_rect = Rect2(320, 128, 128, 64)
+
+[node name="collision" type="StaticBody2D" parent="wall_deco"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="wall_deco/collision"]
+position = Vector2(133, 29)
+polygon = PackedVector2Array(-64, -32, -8, -32, -5.70321, -19.2441, 19.3312, -19.2441, 11.1621, 3.94566, -4.91264, 9.21606, -8, 32, -64, 32)
+
+[node name="corner" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+region_rect = Rect2(64, 128, 64, 64)
+
+[node name="collision" type="StaticBody2D" parent="corner"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="corner/collision"]
+position = Vector2(408, -166)
+polygon = PackedVector2Array(-32, -32, 24, -32, 32, -24, 32, 32, -32, 32)
+
+[node name="flowers" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+region_rect = Rect2(192, 192, 64, 64)
+
+[node name="collision" type="StaticBody2D" parent="flowers"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="flowers/collision"]
+position = Vector2(207, -206)
+polygon = PackedVector2Array(-32, 32, 32, 32, 32, -24, -32, -24)
+
+[node name="tree_base" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+region_rect = Rect2(256, 192, 64, 64)
+
+[node name="collision" type="StaticBody2D" parent="tree_base"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tree_base/collision"]
+position = Vector2(264, 51)
+polygon = PackedVector2Array(-32, 32, 32, 32, 32, -24, -32, -24)
+
+[node name="tree_mid" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+region_rect = Rect2(256, 128, 64, 64)
+
+[node name="tree_mid 2" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+region_rect = Rect2(256, 64, 64, 64)
+
+[node name="tree_top" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+region_rect = Rect2(256, 0, 64, 64)
+
+[node name="solid" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+region_rect = Rect2(0, 64, 64, 64)
+
+[node name="ceiling" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+region_rect = Rect2(384, 64, 64, 64)
+
+[node name="collision" type="StaticBody2D" parent="ceiling"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ceiling/collision"]
+position = Vector2(367, -35)
+polygon = PackedVector2Array(32, -32, 32, 32, -32, 32, -32, -32)
+
+[node name="ramp" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+region_rect = Rect2(128, 128, 64, 128)
+
+[node name="collision" type="StaticBody2D" parent="ramp"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ramp/collision"]
+position = Vector2(-250, -124)
+polygon = PackedVector2Array(-32, -56, 32, 8, 32, 64, -32, 64)
+
+[node name="ceiling2wall" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+region_rect = Rect2(448, 64, 64, 64)
+
+[node name="collision" type="StaticBody2D" parent="ceiling2wall"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ceiling2wall/collision"]
+position = Vector2(-91, -176)
+polygon = PackedVector2Array(-32, -32, 24, -32, 24, 32, -32, 32)
+
+[node name="platform_floor" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+region_rect = Rect2(128, 0, 64, 64)
+
+[node name="collision" type="StaticBody2D" parent="platform_floor"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="platform_floor/collision"]
+position = Vector2(66, -107)
+polygon = PackedVector2Array(32, -24, 32, 24, -32, 24, -32, -24)
+
+[node name="platform_edge" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+region_rect = Rect2(192, 0, 64, 64)
+
+[node name="collision" type="StaticBody2D" parent="platform_edge"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="platform_edge/collision"]
+position = Vector2(269, -119)
+polygon = PackedVector2Array(24, -24, 24, 24, -32, 24, -32, -24)
+
+[node name="help" type="Label" parent="."]
+offset_left = 175.0
+offset_top = 351.0
+offset_right = 1152.0
+offset_bottom = 530.0
+text = "This scene serves as a tool for editing the tileset.
+Nodes (sprites) and their respective collisionsare edited here.
+
+To create a tileset from this, a \"TileSet\" resoucre must be created. Use the helper in: Scene -> Convert To -> TileSet.
+This will save a tileset. Saving over it will merge your changes.
+
+Finally, the saved tileset resource (tileset.tres in this case), can be opened to be used into a TileMap node for editing a tile map."

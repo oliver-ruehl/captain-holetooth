@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://6hjyss5bfunw"]
+
+[ext_resource type="Animation" path="res://src/objects/character_cards/character-card-animation.tres" id="1"]
+
+[sub_resource type="Animation" id="3"]
+length = 2.0
+loop_mode = 1
+step = 0.1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v1bqp"]
+_data = {
+&"flip_card": ExtResource("1"),
+&"flip_polygon_card": SubResource("3")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_v1bqp")
+}
+autoplay = "flip_polygon_card"

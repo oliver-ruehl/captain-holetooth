@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cc5mp5atpywfm"
+path="res://.godot/imported/Percy Wenrich - Frog Legs Ragtime Era Favorites - 02 - The Smiler (1907, Zonophone Concert Band).ogg-b98e26295fe0247c950ba1a05ad83c17.oggvorbisstr"
+
+[deps]
+
+source_file="res://src/audio/music/Percy Wenrich - Frog Legs Ragtime Era Favorites - 02 - The Smiler (1907, Zonophone Concert Band).ogg"
+dest_files=["res://.godot/imported/Percy Wenrich - Frog Legs Ragtime Era Favorites - 02 - The Smiler (1907, Zonophone Concert Band).ogg-b98e26295fe0247c950ba1a05ad83c17.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

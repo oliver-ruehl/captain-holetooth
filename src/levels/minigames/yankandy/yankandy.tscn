@@ -1,0 +1,171 @@
+[gd_scene load_steps=12 format=3 uid="uid://dj0ixyuvslibf"]
+
+[ext_resource type="Texture2D" uid="uid://cjiylt204cotn" path="res://src/screens/ui-icons/icon-font-18/PNG/untitled-e945.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dcp7wmev82rqh" path="res://src/levels/minigames/yankandy/sprite_candyball.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://88k0xcomxwpu" path="res://src/levels/minigames/yankandy/candyball_light.png" id="7"]
+[ext_resource type="Animation" path="res://src/actors/yan/yan_unlock_animation.tres" id="7_mimnh"]
+[ext_resource type="PackedScene" uid="uid://kc7w15occ5n" path="res://src/levels/minigames/yankandy/board_1.tscn" id="8"]
+[ext_resource type="PackedScene" path="res://src/screens/hud/hud.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://cotwaps3i71sx" path="res://src/audio/sfx/sfx.tscn" id="10"]
+[ext_resource type="Script" uid="uid://8rdf3c0ibnkl" path="res://src/levels/minigames/yankandy/ball_script.gd" id="11"]
+[ext_resource type="AudioStream" uid="uid://11x2o4eco7qj" path="res://src/audio/music/yankandy_soundtrack.ogg" id="12"]
+[ext_resource type="Script" uid="uid://dgxfxklxg23kp" path="res://src/audio/music_player/music_player.gd" id="13"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k13wk"]
+_data = {
+&"yan_unlock_anim": ExtResource("7_mimnh")
+}
+
+[node name="yankandy" type="Node2D"]
+
+[node name="scoring" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="scoring_container" type="Node2D" parent="scoring"]
+
+[node name="score_panel" type="Panel" parent="scoring/scoring_container"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 150.0
+offset_bottom = 50.0
+
+[node name="score_description" type="Label" parent="scoring/scoring_container/score_panel"]
+layout_mode = 0
+text = "Score"
+
+[node name="score_digit" type="Label" parent="scoring/scoring_container/score_panel"]
+layout_mode = 0
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 3
+
+[node name="multiplier_panel" type="Panel" parent="scoring/scoring_container"]
+offset_left = 10.0
+offset_top = 60.0
+offset_right = 150.0
+offset_bottom = 100.0
+
+[node name="multiplier_description" type="Label" parent="scoring/scoring_container/multiplier_panel"]
+layout_mode = 0
+text = "Multiplier"
+
+[node name="multiplier_digit" type="Label" parent="scoring/scoring_container/multiplier_panel"]
+layout_mode = 0
+text = "0"
+horizontal_alignment = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="scoring/scoring_container"]
+position = Vector2(10, 10)
+color = Color(1, 0.831373, 0.266667, 1)
+polygon = PackedVector2Array(0, 0, 140, 0, 140, 40, 0, 40)
+
+[node name="Polygon2D2" type="Polygon2D" parent="scoring/scoring_container"]
+position = Vector2(10, 60)
+color = Color(1, 0.999256, 0.984375, 1)
+polygon = PackedVector2Array(0, 0, 140, 0, 140, 40, 0, 40)
+
+[node name="Polygon2D1" type="Polygon2D" parent="scoring/scoring_container"]
+position = Vector2(87, 133)
+color = Color(0.184314, 0.239216, 0.254902, 0.756863)
+polygon = PackedVector2Array(-27.2705, -2.52102, 123.078, -2.52102, 123.984, 28.805, -27.2705, 28.5977)
+
+[node name="icon-left" type="Sprite2D" parent="scoring/scoring_container"]
+texture = ExtResource("4")
+
+[node name="board_1" parent="." instance=ExtResource("8")]
+position = Vector2(285, -48)
+mass = 204.082
+
+[node name="ball" type="RigidBody2D" parent="."]
+position = Vector2(550, 0)
+gravity_scale = 0.0
+script = ExtResource("11")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="ball"]
+polygon = PackedVector2Array(20.1299, -2.77808, 6.9762, -26.6578, -4.37268, -26.6681, -20.5035, -3.59482, -19.6868, 17.6407, -8.04803, 26.2166, 8.19275, 26.2236, 20.4398, 17.8697)
+
+[node name="ball_sprite" type="Sprite2D" parent="ball"]
+texture = ExtResource("6")
+
+[node name="ball_sprite1" type="Sprite2D" parent="ball/ball_sprite"]
+texture = ExtResource("6")
+
+[node name="Camera2D" type="Camera2D" parent="ball"]
+
+[node name="Light2D" type="PointLight2D" parent="ball"]
+scale = Vector2(1e-05, 1e-05)
+color = Color(0.750843, 0.820312, 0.46463, 1)
+energy = 0.59
+texture = ExtResource("7")
+
+[node name="hud" parent="." instance=ExtResource("9")]
+
+[node name="yan_card_unlock" parent="hud" index="0"]
+physics_interpolation_mode = 0
+expand_mode = 1
+
+[node name="hudframe" parent="hud" index="1"]
+physics_interpolation_mode = 0
+expand_mode = 1
+
+[node name="items_label" parent="hud/hudframe" index="0"]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 290.0
+offset_right = 467.0
+offset_bottom = 313.0
+
+[node name="score_display" parent="hud/hudframe/items_label" index="0"]
+layout_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="finalscore_label" parent="hud/hudframe" index="1"]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 10.0
+offset_right = 241.0
+offset_bottom = 33.0
+text = "
+Score"
+
+[node name="final_scoredisplay" parent="hud/hudframe/finalscore_label" index="0"]
+layout_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="highscore_label" parent="hud/hudframe" index="2"]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 84.0
+offset_right = 247.0
+offset_bottom = 107.0
+
+[node name="highscore_display" parent="hud/hudframe/highscore_label" index="0"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = -76.0
+offset_right = 161.0
+offset_bottom = -53.0
+
+[node name="go_to_menu" parent="hud" index="2"]
+offset_left = 400.0
+offset_top = 10.0
+offset_right = 509.0
+offset_bottom = 41.0
+
+[node name="animations" parent="hud" index="4"]
+libraries = {
+&"": SubResource("AnimationLibrary_k13wk")
+}
+
+[node name="dialogbox" parent="hud" index="6"]
+physics_interpolation_mode = 0
+
+[node name="sfx" parent="." instance=ExtResource("10")]
+
+[node name="music_player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12")
+script = ExtResource("13")
+
+[editable path="hud"]

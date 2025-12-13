@@ -1,0 +1,130 @@
+[gd_scene load_steps=9 format=3 uid="uid://b2hpn0t7afwvb"]
+
+[ext_resource type="Texture2D" uid="uid://xwj5oyeiksi6" path="res://src/actors/enemies/soap_bubble/soap_bubble_01.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://xdgke4s5rpm0" path="res://src/actors/enemies/soap_bubble/soap_bubble_02.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://djllujkdswenv" path="res://src/actors/enemies/soap_bubble/soap_bubble_pop.png" id="4"]
+[ext_resource type="PackedScene" path="res://src/audio/sfx/sfx.tscn" id="5"]
+
+[sub_resource type="SpriteFrames" id="2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4")
+}],
+"loop": true,
+"name": &"popped",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="3"]
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:visibility/visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:monitorable")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("sprite:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["popped"]
+}
+
+[sub_resource type="Animation" id="4"]
+length = 2.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:extra_motion")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(-1.86607, -1.86607),
+"update": 0,
+"values": [Vector2(0, -200), Vector2(0, 200)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xogb6"]
+_data = {
+&"explode": SubResource("3"),
+&"zigzag": SubResource("4")
+}
+
+[node name="soap_bubble" type="Area2D"]
+monitoring = false
+monitorable = false
+gravity = 98.0
+
+[node name="collision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-11.5797, 10.0231, 10.116, 9.44193, 11.8594, -9.92922, -11.1923, -10.3166)
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.918033)
+sprite_frames = SubResource("2")
+
+[node name="visibility" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-30, -30, 300, 60)
+
+[node name="anim_player" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xogb6")
+}
+
+[node name="sfx" parent="." instance=ExtResource("5")]
+
+[connection signal="area_entered" from="." to="." method="_on_soap_bubble_area_enter"]
+[connection signal="body_entered" from="." to="." method="_on_soap_bubble_body_enter"]
+[connection signal="screen_entered" from="visibility" to="." method="_on_visibility_enter_screen"]
+[connection signal="screen_exited" from="visibility" to="." method="_on_visibility_exit_screen"]

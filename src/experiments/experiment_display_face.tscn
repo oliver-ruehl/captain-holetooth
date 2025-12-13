@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://b86hdufekf5ox"]
+
+[ext_resource type="PackedScene" path="res://src/screens/hud/hud.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://p1tsrio6whn0" path="res://src/actors/yan/yan.tscn" id="2"]
+[ext_resource type="Animation" path="res://src/actors/yan/yan_unlock_animation.tres" id="2_2or4h"]
+[ext_resource type="Texture2D" uid="uid://cp32qgyau6uri" path="res://src/experiments/default-thumb.jpg" id="3"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j8old"]
+_data = {
+&"yan_unlock_anim": ExtResource("2_2or4h")
+}
+
+[node name="experiment_display_face" type="Node2D"]
+
+[node name="hud" parent="." instance=ExtResource("1")]
+
+[node name="yan_card_unlock" parent="hud" index="0"]
+expand_mode = 1
+
+[node name="hudframe" parent="hud" index="1"]
+expand_mode = 1
+
+[node name="items_label" parent="hud/hudframe" index="0"]
+layout_mode = 0
+
+[node name="score_display" parent="hud/hudframe/items_label" index="0"]
+layout_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="finalscore_label" parent="hud/hudframe" index="1"]
+layout_mode = 0
+
+[node name="final_scoredisplay" parent="hud/hudframe/finalscore_label" index="0"]
+layout_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="highscore_label" parent="hud/hudframe" index="2"]
+layout_mode = 0
+
+[node name="highscore_display" parent="hud/hudframe/highscore_label" index="0"]
+layout_mode = 0
+
+[node name="animations" parent="hud" index="4"]
+libraries = {
+&"": SubResource("AnimationLibrary_j8old")
+}
+
+[node name="Yan" parent="." instance=ExtResource("2")]
+
+[node name="Sprite" parent="Yan" index="0"]
+frame = 0
+
+[node name="portrait_sprite" type="Sprite2D" parent="."]
+texture = ExtResource("3")
+
+[editable path="hud"]
+[editable path="Yan"]

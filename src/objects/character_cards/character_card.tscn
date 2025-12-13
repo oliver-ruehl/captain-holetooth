@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://bdld82u5s84f0"]
+
+[ext_resource type="Texture2D" uid="uid://3vtfaaxv1tsn" path="res://src/screens/character-cards/character-card-flipside.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://duagg344yt2qc" path="res://src/screens/character-cards/character-card-yan-mockup.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://d27870g7vxjyx" path="res://src/objects/torch/light.png" id="5"]
+[ext_resource type="Animation" path="res://src/objects/character_cards/character-card-animation.tres" id="6"]
+[ext_resource type="PackedScene" uid="uid://cotwaps3i71sx" path="res://src/audio/sfx/sfx.tscn" id="7"]
+
+[sub_resource type="Animation" id="2"]
+length = 2.0
+loop_mode = 1
+step = 0.1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_73uqt"]
+_data = {
+&"flip_card": ExtResource("6"),
+&"flip_polygon_card": SubResource("2")
+}
+
+[node name="character_card" type="Node2D"]
+
+[node name="character_card_debug_label" type="Label" parent="."]
+text = "testing"
+max_lines_visible = 0
+
+[node name="character_card_sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2")
+
+[node name="yan-card1" type="Sprite2D" parent="character_card_sprite"]
+modulate = Color(0, 0, 0, 0.442627)
+texture = ExtResource("3")
+
+[node name="Particles2D" type="GPUParticles2D" parent="character_card_sprite"]
+
+[node name="character_card_light" type="PointLight2D" parent="."]
+scale = Vector2(1e-05, 1e-05)
+energy = 0.01
+texture = ExtResource("5")
+
+[node name="character_card_button" type="TextureButton" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_73uqt")
+}
+
+[node name="sfx" parent="." instance=ExtResource("7")]

@@ -1,0 +1,146 @@
+[gd_scene load_steps=17 format=3 uid="uid://q0bg5juw7a1g"]
+
+[ext_resource type="PackedScene" uid="uid://dxmtahu56updr" path="res://src/objects/snow/simple_snow.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://uypq073cudph" path="res://src/screens/cutscenes/broken_ship/broken_ship_scn4.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cvujmqgg4aqbf" path="res://src/objects/snow/snow.png" id="2_2hii2"]
+[ext_resource type="Texture2D" uid="uid://baoy8ep3lf8uq" path="res://src/screens/cutscenes/broken_ship/lochzahn_anim_001.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://cb6iq1krg7283" path="res://src/screens/cutscenes/broken_ship/lochzahn_anim_002.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dxayqn808jiw5" path="res://src/screens/cutscenes/broken_ship/lochzahn_anim_003.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://dkpftm7vf8oi3" path="res://src/screens/cutscenes/broken_ship/lochzahn_anim_004.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://cqdy4ca22v51x" path="res://src/screens/cutscenes/broken_ship/lochzahn_anim_005.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://becyfmor3lsf6" path="res://src/screens/cutscenes/broken_ship/lochzahn_anim_006.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bdb82ryu82ktd" path="res://src/screens/cutscenes/broken_ship/lochzahn_anim_007.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://dtvyat6sy4o3w" path="res://src/screens/cutscenes/broken_ship/lochzahn_anim_008.png" id="10"]
+[ext_resource type="PackedScene" uid="uid://dhc5i2mxknfng" path="res://src/levels/mountain/parallax_mountain.tscn" id="12"]
+
+[sub_resource type="Curve2D" id="1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -158.736, 219.839, 72.8476, 20.6564, -34.9409, -12.4118, 133.229, 94.5179, 84.7092, 15.8978, -5.08491, -9.4915, -36.4104, 67.641, -68.4044, 28.5976, 38.3866, -8.99357, -79.9587, 23.8799, 0, 0, 0, 0, 22.462, 1.11594, -5.52287, 17.3719, -4.74066, -28.6955, 75.6628, -35.8694, 0, 0, 0, 0, 55.6466, -68.3909)
+}
+point_count = 7
+
+[sub_resource type="SpriteFrames" id="2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}],
+"loop": true,
+"name": &"default",
+"speed": 18.0
+}]
+
+[sub_resource type="Animation" id="3"]
+length = 8.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bg_broken_ship/Path2D/PathFollow2D/player_sprite:transform/scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.6, 3, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.7, 0.7), Vector2(0.5, 0.5), Vector2(0.3, 0.3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bg_broken_ship/Path2D/PathFollow2D/player_sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.6, 5, 6.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("bg_broken_ship/Path2D/PathFollow2D/player_sprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 7, 7.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("bg_broken_ship/Path2D/PathFollow2D/player_sprite")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(7.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"gotonext"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m4r3x"]
+_data = {
+&"go_up_ship": SubResource("3")
+}
+
+[node name="broken_ship" type="Node2D"]
+position = Vector2(302, 216)
+
+[node name="simple_snow" parent="." instance=ExtResource("1")]
+texture = ExtResource("2_2hii2")
+
+[node name="bg_broken_ship" type="Sprite2D" parent="."]
+texture = ExtResource("2")
+
+[node name="Path2D" type="Path2D" parent="bg_broken_ship"]
+curve = SubResource("1")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="bg_broken_ship/Path2D"]
+position = Vector2(-158.736, 219.839)
+rotation = -0.27939546
+cubic_interp = false
+loop = false
+
+[node name="Camera2D" type="Camera2D" parent="bg_broken_ship/Path2D/PathFollow2D"]
+position = Vector2(-54.703217, -492.0035)
+anchor_mode = 0
+
+[node name="player_sprite" type="AnimatedSprite2D" parent="bg_broken_ship/Path2D/PathFollow2D"]
+sprite_frames = SubResource("2")
+frame = 7
+offset = Vector2(1.04063, -27.4518)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_m4r3x")
+}
+autoplay = "go_up_ship"
+
+[node name="scn4_parallax_bg" parent="." instance=ExtResource("12")]

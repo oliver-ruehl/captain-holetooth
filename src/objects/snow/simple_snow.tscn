@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://dxmtahu56updr"]
+
+[node name="simple_snow" type="GPUParticles2D"]

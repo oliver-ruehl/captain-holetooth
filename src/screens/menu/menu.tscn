@@ -1,0 +1,157 @@
+[gd_scene load_steps=10 format=3 uid="uid://cttu05m1oro8h"]
+
+[ext_resource type="Script" uid="uid://c4pemkt5wkdsl" path="res://src/screens/menu/menu.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://1oavobdsb5iy" path="res://src/screens/menu/scn1_menu_gametitle_EN.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bg20l25w4g123" path="res://src/screens/menu/scn1_menu_bg.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://cl8u0oak10d1j" path="res://src/screens/menu/splash_screen_lochzahn_single_scn1.png" id="6"]
+[ext_resource type="PackedScene" uid="uid://bds2b00oupc0e" path="res://src/audio/music_player/music_player.tscn" id="13"]
+[ext_resource type="PackedScene" uid="uid://cotwaps3i71sx" path="res://src/audio/sfx/sfx.tscn" id="15"]
+[ext_resource type="Texture2D" uid="uid://bn7hjfe6vs8id" path="res://src/screens/menu/splash_screen_lochzahn_candy_hat.png" id="25"]
+
+[sub_resource type="Animation" id="1"]
+resource_name = "gametitle_animations"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("art/gametitle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5),
+"transitions": PackedFloat32Array(4, 0.25, 0.25),
+"update": 0,
+"values": [Vector2(359, -90), Vector2(359, 100), Vector2(359, 100)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1"]
+_data = {
+&"gametitle_animations": SubResource("1")
+}
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+game_title_path = NodePath("art/gametitle")
+menu_buttons_path = NodePath("menu_buttons")
+options_screen_path = NodePath("options_screen")
+music_player_path = NodePath("music_player")
+music_volume_slider_path = NodePath("options_screen/settings/Audio/vbox/hbox/volume_slide")
+animations_path = NodePath("art/anims")
+
+[node name="art" type="Node2D" parent="."]
+
+[node name="gametitle" type="Sprite2D" parent="art"]
+z_index = 1
+position = Vector2(367, 105)
+texture = ExtResource("2")
+region_enabled = true
+region_rect = Rect2(8, 1, 264, 152)
+
+[node name="bg" type="Node2D" parent="art"]
+
+[node name="splashscreen_bg" type="Sprite2D" parent="art/bg"]
+z_index = -1
+position = Vector2(0, -1)
+texture = ExtResource("3")
+centered = false
+
+[node name="anims" type="AnimationPlayer" parent="art"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_1")
+}
+autoplay = "gametitle_animations"
+
+[node name="keyvisual_lochzahn" type="Sprite2D" parent="art"]
+position = Vector2(264, 149)
+scale = Vector2(0.95312494, 0.95312494)
+texture = ExtResource("6")
+
+[node name="candy_skull_button" type="TextureButton" parent="art/keyvisual_lochzahn"]
+offset_left = -125.0
+offset_top = -129.0
+offset_right = -85.0
+offset_bottom = -89.0
+
+[node name="candy_skull" type="Sprite2D" parent="art/keyvisual_lochzahn/candy_skull_button"]
+position = Vector2(19, 17)
+texture = ExtResource("25")
+hframes = 2
+
+[node name="menu_buttons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.0
+offset_top = -190.0
+offset_right = -161.0
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="startbutton" type="Button" parent="menu_buttons"]
+layout_mode = 2
+text = "Start Game"
+language = "en"
+
+[node name="optionsbutton" type="Button" parent="menu_buttons"]
+layout_mode = 2
+text = "Options / Info"
+
+[node name="music_player" parent="." instance=ExtResource("13")]
+
+[node name="sfx" parent="." instance=ExtResource("15")]
+
+[node name="options_screen" type="Node2D" parent="."]
+visible = false
+z_index = 5
+
+[node name="settings" type="TabContainer" parent="options_screen"]
+offset_top = 16.0
+offset_right = 510.0
+offset_bottom = 290.0
+current_tab = 0
+
+[node name="Audio" type="TabBar" parent="options_screen/settings"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="vbox" type="VBoxContainer" parent="options_screen/settings/Audio"]
+layout_mode = 0
+offset_top = 30.0
+offset_right = 40.0
+offset_bottom = 70.0
+
+[node name="hbox" type="HBoxContainer" parent="options_screen/settings/Audio/vbox"]
+layout_mode = 2
+
+[node name="volume_slide" type="HSlider" parent="options_screen/settings/Audio/vbox/hbox"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+value = 100.0
+
+[node name="exitbutton" type="TextureButton" parent="options_screen"]
+offset_left = 64.0
+offset_top = 22.0
+offset_right = 104.0
+offset_bottom = 62.0
+texture_normal = ExtResource("25")
+
+[connection signal="pressed" from="art/keyvisual_lochzahn/candy_skull_button" to="." method="_on_candy_skull_button_pressed"]
+[connection signal="pressed" from="menu_buttons/startbutton" to="." method="_on_startbutton_pressed"]
+[connection signal="pressed" from="menu_buttons/optionsbutton" to="." method="_on_optionsbutton_pressed"]
+[connection signal="value_changed" from="options_screen/settings/Audio/vbox/hbox/volume_slide" to="." method="_on_music_volume_value_changed"]
+[connection signal="pressed" from="options_screen/exitbutton" to="." method="_on_exitbutton_pressed"]

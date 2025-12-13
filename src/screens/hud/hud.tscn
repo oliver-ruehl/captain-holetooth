@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://dx4v7gbvgwp7t"]
+
+[ext_resource type="Texture2D" uid="uid://bmpets4cttdjl" path="res://src/actors/yan/yan_card_80x80.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://du734p75sej3l" path="res://src/screens/hud/hud_bg.png" id="3"]
+[ext_resource type="Animation" path="res://src/actors/yan/yan_unlock_animation.tres" id="9"]
+[ext_resource type="PackedScene" uid="uid://cotwaps3i71sx" path="res://src/audio/sfx/sfx.tscn" id="10"]
+[ext_resource type="Texture2D" uid="uid://ndjnwffbw05c" path="res://src/screens/hud/dialog-box-patch9frame.png" id="11"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y2ery"]
+_data = {
+&"yan_unlock_anim": ExtResource("9")
+}
+
+[node name="hud" type="CanvasLayer"]
+
+[node name="yan_card_unlock" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("2")
+expand_mode = 1
+
+[node name="hudframe" type="TextureRect" parent="."]
+texture = ExtResource("3")
+expand_mode = 1
+
+[node name="items_label" type="Label" parent="hudframe"]
+layout_mode = 0
+text = "Items collected"
+
+[node name="score_display" type="Label" parent="hudframe/items_label"]
+layout_mode = 0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="finalscore_label" type="Label" parent="hudframe"]
+layout_mode = 0
+text = "SCORE"
+
+[node name="final_scoredisplay" type="Label" parent="hudframe/finalscore_label"]
+layout_mode = 0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="highscore_label" type="Label" parent="hudframe"]
+layout_mode = 0
+text = "Highscore"
+
+[node name="highscore_display" type="Label" parent="hudframe/highscore_label"]
+layout_mode = 0
+text = "0"
+
+[node name="go_to_menu" type="Button" parent="."]
+text = "< Main Menu"
+
+[node name="sound_off" type="TextureButton" parent="."]
+toggle_mode = true
+
+[node name="animations" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_y2ery")
+}
+
+[node name="sfx" parent="." instance=ExtResource("10")]
+
+[node name="dialogbox" type="NinePatchRect" parent="."]
+texture = ExtResource("11")
+
+[connection signal="pressed" from="go_to_menu" to="." method="_on_go_to_menu_pressed"]
+[connection signal="pressed" from="sound_off" to="." method="_on_sound_off_pressed"]

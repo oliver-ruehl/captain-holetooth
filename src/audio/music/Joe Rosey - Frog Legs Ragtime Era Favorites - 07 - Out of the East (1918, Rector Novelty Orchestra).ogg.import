@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d3i63pnmnseem"
+path="res://.godot/imported/Joe Rosey - Frog Legs Ragtime Era Favorites - 07 - Out of the East (1918, Rector Novelty Orchestra).ogg-00ce641ab533382bc86fbca0557d7fdc.oggvorbisstr"
+
+[deps]
+
+source_file="res://src/audio/music/Joe Rosey - Frog Legs Ragtime Era Favorites - 07 - Out of the East (1918, Rector Novelty Orchestra).ogg"
+dest_files=["res://.godot/imported/Joe Rosey - Frog Legs Ragtime Era Favorites - 07 - Out of the East (1918, Rector Novelty Orchestra).ogg-00ce641ab533382bc86fbca0557d7fdc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

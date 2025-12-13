@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://vpy70w2tbobt"]
+
+[ext_resource type="PackedScene" uid="uid://c46kksksftrtm" path="res://src/actors/enemies/sugarcubes_from_hell/sugarcubes_from_hell.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://b2hpn0t7afwvb" path="res://src/actors/enemies/soap_bubble/soap_bubble.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://w72xwsts2hgw" path="res://src/actors/enemies/tornado/tornado.tscn" id="5"]
+
+[node name="npcs" type="Node2D"]
+
+[node name="sugarcubes" parent="." instance=ExtResource("1")]
+
+[node name="sugarcubes1" parent="." instance=ExtResource("1")]
+
+[node name="sugarcubes2" parent="." instance=ExtResource("1")]
+
+[node name="sugarcubes3" parent="." instance=ExtResource("1")]
+
+[node name="sugarcubes4" parent="." instance=ExtResource("1")]
+
+[node name="sugarcubes5" parent="." instance=ExtResource("1")]
+
+[node name="soap_bubble" parent="." instance=ExtResource("3")]
+
+[node name="soap_bubble1" parent="." instance=ExtResource("3")]
+
+[node name="soap_bubble2" parent="." instance=ExtResource("3")]
+
+[node name="soap_bubble3" parent="." instance=ExtResource("3")]
+
+[node name="tornado" parent="." instance=ExtResource("5")]
+
+[node name="tornado1" parent="." instance=ExtResource("5")]
+
+[node name="tornado2" parent="." instance=ExtResource("5")]
+
+[node name="tornado3" parent="." instance=ExtResource("5")]
+
+[node name="tornado4" parent="." instance=ExtResource("5")]
+
+[node name="tornado5" parent="." instance=ExtResource("5")]
+
+[connection signal="area_entered" from="sugarcubes" to="sugarcubes" method="destroy"]
+[connection signal="area_entered" from="sugarcubes1" to="sugarcubes1" method="destroy"]
+[connection signal="area_entered" from="sugarcubes2" to="sugarcubes2" method="destroy"]
+[connection signal="area_entered" from="sugarcubes3" to="sugarcubes3" method="destroy"]
+[connection signal="area_entered" from="sugarcubes4" to="sugarcubes4" method="destroy"]
+[connection signal="area_entered" from="sugarcubes5" to="sugarcubes5" method="destroy"]
+[connection signal="area_entered" from="soap_bubble" to="soap_bubble" method="destroy"]
+[connection signal="area_entered" from="soap_bubble1" to="soap_bubble1" method="destroy"]
+[connection signal="area_entered" from="soap_bubble2" to="soap_bubble2" method="destroy"]
+[connection signal="area_entered" from="soap_bubble3" to="soap_bubble3" method="destroy"]
+[connection signal="area_entered" from="tornado" to="tornado" method="destroy"]
+[connection signal="area_entered" from="tornado1" to="tornado1" method="destroy"]
+[connection signal="area_entered" from="tornado2" to="tornado2" method="destroy"]
+[connection signal="area_entered" from="tornado3" to="tornado3" method="destroy"]
+[connection signal="area_entered" from="tornado4" to="tornado4" method="destroy"]
+[connection signal="area_entered" from="tornado5" to="tornado5" method="destroy"]

@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://b0xkhul88h0bw"
+path="res://.godot/imported/supertiny.fnt-c95efddbe951ddf6467819219ec8737f.fontdata"
+
+[deps]
+
+source_file="res://src/fonts/supertiny.fnt"
+dest_files=["res://.godot/imported/supertiny.fnt-c95efddbe951ddf6467819219ec8737f.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

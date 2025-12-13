@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://fotmscs3f0wr"]
+
+[ext_resource type="Texture2D" uid="uid://bmpets4cttdjl" path="res://src/actors/yan/yan_card_80x80.png" id="1"]
+[ext_resource type="PackedScene" path="res://src/audio/sfx/sfx.tscn" id="3"]
+
+[sub_resource type="Animation" id="1"]
+length = 5.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3.4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_26bxj"]
+_data = {
+&"yan_unlock_anim": SubResource("1")
+}
+
+[node name="yan_card_unlock" type="TextureRect"]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("1")
+expand_mode = 1
+
+[node name="animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_26bxj")
+}
+
+[node name="sfx" parent="." instance=ExtResource("3")]
