@@ -15,13 +15,6 @@ A cast of amazing characters helps Captain Holetooth to defend the "magic candy"
 * The game BETA is already available for **Mac, Android, Linux, PC.**
 * Controller support
 
-## Media
-* [See the media gallery on Hirnbix.com](https://www.hirnbix.com/gallery/)
-
-## Binary Downloads for Linux, MacOS, Windows, Android
-
-* [The ALPHA Android version on Google Play](https://play.google.com/apps/testing/org.godotengine.captainholetooth)
-
 ## Want to become part of the team?
 
 Feel free to contact me here. I need programmers all of the time.
