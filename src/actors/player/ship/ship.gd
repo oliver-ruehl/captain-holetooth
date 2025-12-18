@@ -38,28 +38,28 @@ func _process(delta):
 	var motion = Vector2()
 
 	# Input: MOVE UP
-	if Input.is_action_pressed("move_up"):
+	if Input.is_action_pressed("ui_up"):
 		motion += Vector2(0, -1)
 	# Input: MOVE DOWN
-	if Input.is_action_pressed("move_down"):
+	if Input.is_action_pressed("ui_down"):
 		motion += Vector2(0, 1)
 	# Input: MOVE LEFT
-	if Input.is_action_pressed("move_left"):
+	if Input.is_action_pressed("ui_left"):
 		motion += Vector2(-1, 0)
 	# Input: MOVE RIGHT
-	if Input.is_action_pressed("move_right"):
+	if Input.is_action_pressed("ui_right"):
 		motion += Vector2(1, 0)
 	# Input: SHOOT
-	if Input.is_action_pressed("shoot") && timer.get_time_left() <= 0:
+	if Input.is_action_pressed("ui_accept") && timer.get_time_left() <= 0:
 		timer.start()
-		# Create a new shot instance
-		var shot = preload("shot.tscn").instantiate()
+		# Create a new bullet instance
+		var bullet = preload("res://src/actors/player/bullet.tscn").instantiate()
 
-		# Use the Position2D as spawn coordinate for our new shot
-		shot.position = get_node("shootfrom").global_position
+		# Use the Position2D as spawn coordinate for our new bullet
+		bullet.position = get_node("shootfrom").global_position
 
 		# Put it two parents above, so it is not moved by us
-		get_node("../..").add_child(shot)
+		get_node("../..").add_child(bullet)
 
 		# Play shooting sound
 		get_node("sfx").play("shoot")
@@ -102,6 +102,7 @@ func _ready():
 
 	# Connect area signals
 	area_entered.connect(_on_player_area_enter)
+	body_entered.connect(_on_player_body_enter)
 
 	# Enable process
 	set_process(true)
@@ -161,6 +162,20 @@ func acc_boost_activate():
 # On area enter the player
 func _on_player_area_enter(area):
 	var groups = area.get_groups()
+
+	if groups.has("enemy") or groups.has("enemy_shot"):
+		# Play ship 'hit' animation
+		anim_player.play("hit")
+
+		# Wait for the animation to complete
+		await anim_player.animation_finished
+
+		# Go back to the 'flying' animation (default)
+		anim_player.play("flying")
+
+# On body enter the player (for physics-based collisions)
+func _on_player_body_enter(body):
+	var groups = body.get_groups()
 
 	if groups.has("enemy") or groups.has("enemy_shot"):
 		# Play ship 'hit' animation

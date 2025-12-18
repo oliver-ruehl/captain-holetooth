@@ -29,8 +29,8 @@ func _ready():
 		var card_height = card_dimensions.y
 		var card_width = card_dimensions.x
 		print(str(card_width) + " " + str(card_height))
-		i += 1
 		character_cards_instance.position = Vector2(left_margin + ((i % 3) * (innercard_margin_w + card_width)), top_margin + (floor(i / 3) * (innercard_margin_h + card_height)))
+		i += 1
 		character_cards_instance.get_node("character_card_debug_label").text = character_card_name
 
 		if character_cards_instance.position.x + card_width > max_w:

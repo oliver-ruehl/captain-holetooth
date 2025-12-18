@@ -81,8 +81,11 @@ position = Vector2(550, 0)
 gravity_scale = 0.0
 script = ExtResource("11")
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="ball"]
-polygon = PackedVector2Array(20.1299, -2.77808, 6.9762, -26.6578, -4.37268, -26.6681, -20.5035, -3.59482, -19.6868, 17.6407, -8.04803, 26.2166, 8.19275, 26.2236, 20.4398, 17.8697)
+[sub_resource type="CircleShape2D" id="1"]
+radius = 25.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ball"]
+shape = SubResource("1")
 
 [node name="ball_sprite" type="Sprite2D" parent="ball"]
 texture = ExtResource("6")

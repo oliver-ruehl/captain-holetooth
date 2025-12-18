@@ -33,9 +33,12 @@ _data = {
 &"day_to_night": SubResource("1")
 }
 
+[ext_resource type="Script" path="res://src/levels/flyhome/rail.gd" id="15"]
+
 [node name="flyhome5" type="Node2D"]
 
 [node name="rail" type="Node2D" parent="."]
+script = ExtResource("15")
 
 [node name="player" parent="rail" instance=ExtResource("3")]
 
@@ -44,14 +47,18 @@ anchor_mode = 0
 
 [node name="parallax" type="ParallaxBackground" parent="."]
 layer = -1
+scroll_offset = Vector2(0, 0)
+scroll_base_scale = Vector2(1, 1)
 
 [node name="sky" type="ParallaxLayer" parent="parallax"]
+motion_scale = Vector2(0.1, 1)
 
 [node name="skygradient" type="Sprite2D" parent="parallax/sky"]
+position = Vector2(640, 360)
 modulate = Color(0.0778656, 0.0923227, 0.246094, 1)
 texture = ExtResource("4")
-centered = false
-flip_h = true
+centered = true
+flip_h = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="parallax/sky/skygradient"]
 libraries = {
@@ -60,41 +67,55 @@ libraries = {
 autoplay = "day_to_night"
 
 [node name="mountains_back" type="ParallaxLayer" parent="parallax"]
+motion_scale = Vector2(0.3, 1)
 
 [node name="Sprite1" type="Sprite2D" parent="parallax/mountains_back"]
+position = Vector2(640, 360)
 modulate = Color(0.274933, 0.405625, 0.492188, 1)
 texture = ExtResource("5")
+centered = true
 
 [node name="bg_layer7_small_clouds" type="ParallaxLayer" parent="parallax"]
+motion_scale = Vector2(0.2, 1)
 
 [node name="Sprite5" type="Sprite2D" parent="parallax/bg_layer7_small_clouds"]
+position = Vector2(640, 200)
 texture = ExtResource("6")
+centered = true
 
 [node name="field_middle_green_hills" type="ParallaxLayer" parent="parallax"]
+motion_scale = Vector2(0.5, 1)
 
 [node name="Sprite1" type="Sprite2D" parent="parallax/field_middle_green_hills"]
+position = Vector2(640, 360)
 modulate = Color(0.196382, 0.296875, 0.160034, 1)
 texture = ExtResource("5")
+centered = true
 flip_h = true
 
 [node name="bg_layer4_clouds" type="ParallaxLayer" parent="parallax"]
+motion_scale = Vector2(0.4, 1)
 
 [node name="Sprite" type="Sprite2D" parent="parallax/bg_layer4_clouds"]
+position = Vector2(300, 200)
 modulate = Color(0.382812, 0.218323, 0.303138, 0.486353)
 texture = ExtResource("6")
+centered = true
 
 [node name="Sprite5" type="Sprite2D" parent="parallax/bg_layer4_clouds"]
+position = Vector2(900, 250)
 modulate = Color(0.554688, 0.468018, 0.470049, 0.655765)
 texture = ExtResource("6")
+centered = true
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="parallax"]
-layer = 1
+[node name="foreground" type="ParallaxLayer" parent="parallax"]
+motion_scale = Vector2(0.8, 1)
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="parallax/ParallaxBackground"]
-
-[node name="Sprite" type="Sprite2D" parent="parallax/ParallaxBackground/ParallaxLayer"]
+[node name="Sprite" type="Sprite2D" parent="parallax/foreground"]
+position = Vector2(640, 360)
 modulate = Color(0.128906, 0.127431, 0.0911407, 1)
 texture = ExtResource("5")
+centered = true
 
 [node name="hud" parent="." instance=ExtResource("7")]
 
