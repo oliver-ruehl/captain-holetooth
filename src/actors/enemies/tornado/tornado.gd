@@ -1,5 +1,6 @@
+extends CharacterBody2D
 
 # Reward Scene
-@onready var REWARD = preload("res://src/objects/rewards/reward.tscn")
+var REWARD = preload("res://src/objects/rewards/reward.tscn")
 
 # Health

@@ -1,3 +1,5 @@
+extends Node
+
 # var b = "textvar"
 
 @onready var actor_node = get_node("../Yan/Sprite")

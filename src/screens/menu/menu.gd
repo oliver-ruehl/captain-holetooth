@@ -139,4 +139,5 @@ func _on_charactercardsbutton_pressed():
 
 func _on_candy_skull_button_pressed():
 	if animations:
-		animations.animation_finished.connect(func(_name): animations.play("wigglecandy"))
+		# Play the wigglecandy animation once (avoid infinite reconnection)
+		animations.play("wigglecandy")

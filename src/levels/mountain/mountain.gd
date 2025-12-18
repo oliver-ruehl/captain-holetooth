@@ -3,7 +3,7 @@ extends Node2D
 # -- START --
 func _ready():
 	# Adds this scene to db
-	game.open_scene("scn4")
+	Game.open_scene("scn4")
 	var initial_pos_player
 	# Get initial player spawn position
 	Global.last_pos[1].x += 100#adding beacause the player would spawn in the teleport

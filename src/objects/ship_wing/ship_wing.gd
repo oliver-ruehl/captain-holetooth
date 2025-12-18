@@ -1,3 +1,5 @@
+extends Node
+
 ##################
 
 @onready var animation = get_node("anim")

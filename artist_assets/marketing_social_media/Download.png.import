@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhmbi3ith01xy"
-path="res://.godot/imported/captain-holetooth-palette.png-758ccd36ce9fcc16b21cf7066f1fac19.ctex"
+uid="uid://wcerbpjjlfqb"
+path="res://.godot/imported/Download.png-74a6d1e6d065d89ae3624633d9a37c6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://artist_assets/captain-holetooth-palette.png"
-dest_files=["res://.godot/imported/captain-holetooth-palette.png-758ccd36ce9fcc16b21cf7066f1fac19.ctex"]
+source_file="res://artist_assets/marketing_social_media/Download.png"
+dest_files=["res://.godot/imported/Download.png-74a6d1e6d065d89ae3624633d9a37c6f.ctex"]
 
 [params]
 

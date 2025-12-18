@@ -6,10 +6,10 @@ extends AnimatedSprite2D
 # var b="textvar"
 
 func _ready():
-   set_process(true)
+	set_process(true)
 
 func _process(delta):
-   get_parent().offset += Vector2(120*delta, 0)
+	get_parent().offset += Vector2(120*delta, 0)
 
 func gotonext():
 	print("Going to next")
