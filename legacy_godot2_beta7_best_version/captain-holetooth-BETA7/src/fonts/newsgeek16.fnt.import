@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://c061m6ewc0shs"
+path="res://.godot/imported/newsgeek16.fnt-04e9748122402f3466a686ea49be0862.fontdata"
+
+[deps]
+
+source_file="res://legacy_godot2_beta7_best_version/captain-holetooth-BETA7/src/fonts/newsgeek16.fnt"
+dest_files=["res://.godot/imported/newsgeek16.fnt-04e9748122402f3466a686ea49be0862.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

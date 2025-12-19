@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://ukq3lrqannmg"
+
+[deps]
+
+files=["res://legacy_godot2_beta7_best_version/captain-holetooth-BETA7/src/localization/translations.en_GB.translation", "res://legacy_godot2_beta7_best_version/captain-holetooth-BETA7/src/localization/translations.de_DE.translation"]
+
+source_file="res://legacy_godot2_beta7_best_version/captain-holetooth-BETA7/src/localization/translations.csv"
+dest_files=["res://legacy_godot2_beta7_best_version/captain-holetooth-BETA7/src/localization/translations.en_GB.translation", "res://legacy_godot2_beta7_best_version/captain-holetooth-BETA7/src/localization/translations.de_DE.translation"]
+
+[params]
+
+compress=true
+delimiter=0

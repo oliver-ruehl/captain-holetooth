@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://dqsw6r8wbsmrd"
+path="res://.godot/imported/medieval_font16.fnt-19024546da122473c734a5cfa81c7640.fontdata"
+
+[deps]
+
+source_file="res://legacy_godot2_beta7_best_version/captain-holetooth-BETA7/src/fonts/medieval_font16.fnt"
+dest_files=["res://.godot/imported/medieval_font16.fnt-19024546da122473c734a5cfa81c7640.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

@@ -40,7 +40,7 @@ func _integrate_forces(state):
 	# Get the controls
 	var move_left = Input.is_action_pressed("ui_left")
 	var move_right = Input.is_action_pressed("ui_right")
-	var jump = Input.is_action_pressed("ui_up")
+	var jump = Input.is_action_pressed("ui_select")
 	var shoot = Input.is_action_pressed("ui_accept")
 
 	# Deapply prev floor velocity
@@ -96,7 +96,7 @@ func _integrate_forces(state):
 			jumping = true
 
 			# if !get_node("sfx").is_active():
-			get_node("sfx").play("jump")
+			# get_node("sfx").play("jump")
 
 			if Global.times_jumped:
 				Global.times_jumped = Global.times_jumped + 1
@@ -186,7 +186,7 @@ func _spawn_bullet():
 
 	bi.linear_velocity = Vector2(800.0 * CURR_DIR.x, -80)
 	get_node("sprite/smoke").emitting = true
-	get_node("sfx").play("schwuit")
+	# get_node("sfx").play("schwuit")
 	PhysicsServer2D.body_add_collision_exception(bi.get_rid(), get_rid())
 
 func _ready():

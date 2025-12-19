@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://cqn077q0wqxg6"
+path="res://.godot/imported/icon_font16.fnt-eb991ea72431b6af99f0a8f22d486209.fontdata"
+
+[deps]
+
+source_file="res://legacy_godot2_beta7_best_version/captain-holetooth-BETA7/src/fonts/icon_font16.fnt"
+dest_files=["res://.godot/imported/icon_font16.fnt-eb991ea72431b6af99f0a8f22d486209.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

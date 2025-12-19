@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://j47ejuobtjav"
+path="res://.godot/imported/berry12.fnt-04475bee5a40c4b5065e2c40f3a93db1.fontdata"
+
+[deps]
+
+source_file="res://legacy_godot2_beta7_best_version/captain-holetooth-BETA7/src/fonts/berry12.fnt"
+dest_files=["res://.godot/imported/berry12.fnt-04475bee5a40c4b5065e2c40f3a93db1.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

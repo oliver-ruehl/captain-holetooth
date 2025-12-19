@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://7oybre5wt7h6"
+path="res://.godot/imported/microstyle_font16.fnt-05ef123877a45916ab4ab0feaf71bd4e.fontdata"
+
+[deps]
+
+source_file="res://legacy_godot2_beta7_best_version/captain-holetooth-BETA7/src/fonts/microstyle_font16.fnt"
+dest_files=["res://.godot/imported/microstyle_font16.fnt-05ef123877a45916ab4ab0feaf71bd4e.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2
