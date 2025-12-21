@@ -10,7 +10,6 @@ var fading = false
 func fade_to(path):
 	# If we are currently fading to a scene, return
 	if fading:
-		print("DEBUG: Skip fading to " + path)
 		return
 
 	# Set fading to true to prevent fading while fading
@@ -20,7 +19,6 @@ func fade_to(path):
 	if anim != null:
 		anim.play("fade_in")
 	else:
-		print("ERROR: anim is null in fade_to()")
 		return
 
 	# Wait until animation is finished

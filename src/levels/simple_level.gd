@@ -29,3 +29,10 @@ func _ready():
 	poly.polygon = col.polygon
 	poly.color = Color(0.3, 0.3, 0.3)
 	floor_body.add_child(poly)
+
+	# Add a level end trigger at the end of the level
+	var trigger = preload("res://src/components/level_end_trigger.tscn").instantiate()
+	# Position near the end wall (x=99), slightly up so player walks into it
+	trigger.position = Vector2(95 * 64, 8 * 64)
+	trigger.next_level_scene = "res://src/screens/menu/menu.tscn"
+	add_child(trigger)

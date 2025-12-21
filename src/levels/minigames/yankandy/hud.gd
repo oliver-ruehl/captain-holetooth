@@ -4,7 +4,7 @@ extends CanvasLayer
 # member variables here, example:
 # var a=2
 # var b="textvar"
-func _process(delta):
+func _process(_delta):
 	get_node("scoring/score_text").text = str(Global.score_total)
 	get_node("scoring/multiplier_text").text = str(Global.score_multiplier)
 

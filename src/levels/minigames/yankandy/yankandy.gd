@@ -1,6 +1,6 @@
 extends Node2D
 
-func _process(delta):
+func _process(_delta):
 	get_node("scoring/scoring_container/score_panel/score_digit").text = str(Global.yankandy_score_total)
 	get_node("scoring/scoring_container/multiplier_panel/multiplier_digit").text = str(Global.yankandy_score_multiplier)
 

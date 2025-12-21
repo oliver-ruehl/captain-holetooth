@@ -7,10 +7,10 @@ var node_path = get_path()
 @export var scene_path = "no scene"
 
 func _ready():
-	print(node_path)
+	pass
 
 func _on_scene_teleporter_body_entered( body ):
-	print("Teleporting to " + scene_path)
+	pass
 
 	#get_node("/root/game").set_text(str(scene_path))
 	#if body.get_name() == "player":

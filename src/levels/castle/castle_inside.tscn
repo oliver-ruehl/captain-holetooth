@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" path="res://src/objects/rewards/reward.tscn" id="4"]
 [ext_resource type="PackedScene" path="res://src/screens/hud/hud.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://bds2b00oupc0e" path="res://src/audio/music_player/music_player.tscn" id="6"]
-[ext_resource type="PackedScene" uid="uid://dlltnv5hjfudi" path="res://src/scene_teleporter.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://dlltnv5hjfudi" path="res://src/components/scene_teleporter.tscn" id="8"]
 [ext_resource type="PackedScene" path="res://src/objects/castle_inside/castle_inside_window.tscn" id="9"]
 
 [sub_resource type="OccluderPolygon2D" id="1"]

@@ -64,13 +64,10 @@ signal dialog_end
 func _ready():
 	for actor in get_tree().get_nodes_in_group("actors"):
 		var actor_node_path = actor.get_path()
-		print(actor_node_path)
 		var _actor_node = get_node(actor_node_path)
 
 	char_amt = 255
 	line_amt = 5
-	print(char_amt, " ", line_amt)
-	print(dialog_yan)
 	set_process(true) # In Godot 4 we use _process instead of _fixed_process for this usually, or _physics_process
 
 func _unhandled_key_input(_key_event):
@@ -185,7 +182,6 @@ func next_line():
 			progress = -1
 			queue_redraw()
 			emit_signal("dialog_end")
-			print("Dialogue finished!")
 
 
 func process_text(string):

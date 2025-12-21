@@ -43,14 +43,14 @@ func _ready():
 # Start Game
 func _on_startbutton_pressed():
 	Transition.fade_to("res://src/screens/intro/intro.tscn")
-	# get_node("sfx").play("click")
+	get_node("sfx").play("click")
 
 # Options
 func _on_optionsbutton_pressed():
 	if options_screen:
 		options_screen.show()
 		set_process_input(true)
-	# get_node("sfx").play("click")
+	get_node("sfx").play("click")
 
 # Exit
 func _on_exitbutton_pressed():
@@ -60,24 +60,24 @@ func _on_exitbutton_pressed():
 	var start_btn = get_node_or_null("menu_buttons/startbutton")
 	if start_btn:
 		start_btn.grab_focus()
-	# get_node("sfx").play("click")
+	get_node("sfx").play("click")
 
 # Close Options
 func _on_btn_close_options_pressed():
 	if options_screen:
 		options_screen.hide()
-	# get_node("sfx").play("click")
+	get_node("sfx").play("click")
 
 # Change Language to German
 func _on_de_button_pressed():
-	# get_node("sfx").play("click")
+	get_node("sfx").play("click")
 	TranslationServer.set_locale("de_DE")
 	get_tree().reload_current_scene()
 
 
 # Change Language to English
 func _on_en_button_pressed():
-	# get_node("sfx").play("click")
+	get_node("sfx").play("click")
 	TranslationServer.set_locale("en_GB")
 	get_tree().reload_current_scene()
 
@@ -91,33 +91,28 @@ func _on_music_volume_value_changed( value ):
 		Global.music.volume = value/100
 
 	# Update music player volume
-	# if music_player:
-	# 	music_player.volume_db = linear_to_db(Global.music.volume)
+	if music_player:
+		music_player.volume_db = linear_to_db(Global.music.volume)
 
 
 # -- DEBUG --
 # DEBUG: Jump to scene 3
 func _on_jump_scn3_pressed():
-	print("Transition to Scene 3")
 	Transition.fade_to("res://src/levels/forest/forest.tscn")
 
 # DEBUG: Jump to scene 4
 func _on_jump_scn4_pressed():
-	print("Transition to mountain")
 	Transition.fade_to("res://src/levels/mountain/mountain.tscn")
 
 # DEBUG: Jump to scene 5
 func _on_jump_scn5_pressed():
-	print("Transition to fly home")
 	Transition.fade_to("res://src/levels/flyhome/flyhome.tscn")
 
 # DEBUG: Jump to minigame
 func _on_jump_minigame_pressed():
-	print("Transition to minigame")
 	Transition.fade_to("res://src/levels/minigames/yankandy/yankandy.tscn")
 
 func _on_jump_castle_pressed():
-	print("Transition to castle")
 	Transition.fade_to("res://src/levels/castle/castle_outside.tscn")
 
 func _on_donate_button_pressed():
@@ -130,11 +125,9 @@ func _on_playtime_confirm_pressed():
 	if input and Global.music:
 		Global.playtime_limit_minutes = input.text
 		Global.playtime_limit_seconds = int(Global.playtime_limit_minutes) * 60
-		print(Global.playtime_limit_seconds)
 
 
 func _on_charactercardsbutton_pressed():
-	print("Transition to character cards")
 	Transition.fade_to("res://src/screens/character-cards/character-cards.tscn")
 
 func _on_candy_skull_button_pressed():

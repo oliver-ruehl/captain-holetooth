@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4wwdom7a6knx"]
+[gd_scene load_steps=10 format=3 uid="uid://c4wwdom7a6knx"]
 
 [ext_resource type="Texture2D" uid="uid://cv6xn5wl4uxbu" path="res://src/levels/forest/art/scroll_bg_sky.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://dhcnlsb1bcnk5" path="res://src/levels/forest/art/scroll_bg_cloud_1.png" id="2"]
@@ -8,34 +8,53 @@
 [ext_resource type="Texture2D" uid="uid://dyfivslwjjrca" path="res://src/levels/forest/art/smoke_house_spritesheet.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://bkjkvxy1j5grf" path="res://src/levels/forest/art/scroll_bg_fg_2.png" id="7"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_smoke"]
+particles_animation = true
+particles_anim_h_frames = 38
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_smoke"]
+inherit_velocity_ratio = 0.012
+spread = 63.323
+flatness = 0.138
+initial_velocity_min = 5.0
+initial_velocity_max = 15.0
+orbit_velocity_min = 0.027000096
+orbit_velocity_max = 0.027000096
+gravity = Vector3(0, -100, 0)
+scale_min = 0.5
+scale_max = 0.5
+anim_speed_min = 1.5
+anim_speed_max = 1.5
+
 [node name="parallax_bg" type="ParallaxBackground"]
 layer = -1
 
 [node name="sky" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.1, 0)
 
 [node name="Sprite" type="Sprite2D" parent="sky"]
+scale = Vector2(39.96875, 1.4023438)
 texture = ExtResource("1")
 centered = false
 
 [node name="clouds" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.3, 0)
 
 [node name="Sprite" type="Sprite2D" parent="clouds"]
+position = Vector2(560, 48)
 texture = ExtResource("2")
-centered = false
-
-[node name="Sprite 2" type="Sprite2D" parent="clouds"]
-texture = ExtResource("2")
-centered = false
-
-[node name="Sprite 4" type="Sprite2D" parent="clouds"]
-texture = ExtResource("3")
 centered = false
 
 [node name="Sprite 6" type="Sprite2D" parent="clouds"]
+z_index = 1
+position = Vector2(311, 133)
 texture = ExtResource("4")
 centered = false
 
 [node name="mountains" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0)
 
 [node name="Sprite" type="Sprite2D" parent="mountains"]
 texture = ExtResource("5")
@@ -43,15 +62,44 @@ centered = false
 region_rect = Rect2(0, 0, 1024, 256)
 
 [node name="house_smoke" type="GPUParticles2D" parent="mountains"]
+material = SubResource("CanvasItemMaterial_smoke")
+position = Vector2(493, 91)
+amount = 15
+amount_ratio = 0.7513
 texture = ExtResource("6")
+lifetime = 3.5
+interp_to_end = 0.038
+speed_scale = 0.3
+randomness = 0.1
+fixed_fps = 22
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_smoke")
 
 [node name="Sprite 3" type="Sprite2D" parent="mountains"]
+position = Vector2(790, 58)
+scale = Vector2(0.515625, 0.453125)
 texture = ExtResource("3")
 centered = false
 
 [node name="hills" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.8, 0)
 
 [node name="Sprite" type="Sprite2D" parent="hills"]
+z_index = 1
+position = Vector2(3, 176)
 texture = ExtResource("7")
 centered = false
 region_rect = Rect2(0, 0, 1024, 256)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+
+[node name="Sprite 4" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(119, 48)
+texture = ExtResource("3")
+centered = false
+
+[node name="Sprite 2" type="Sprite2D" parent="ParallaxLayer/Sprite 4"]
+z_index = 1
+position = Vector2(705, 109)
+texture = ExtResource("2")
+centered = false

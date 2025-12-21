@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cahcvncoxrk6f"]
 
 [ext_resource type="Texture2D" uid="uid://drn2sunumtyqj" path="res://src/actors/enemies/forest_crawler/forest_crawler.png" id="2"]
-[ext_resource type="PackedScene" uid="uid://bhbjcbadx3ufa" path="res://src/persist.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://bhbjcbadx3ufa" path="res://src/components/persist.tscn" id="4"]
 [ext_resource type="PackedScene" path="res://src/audio/sfx/sfx.tscn" id="5"]
 
 [sub_resource type="Animation" id="2"]

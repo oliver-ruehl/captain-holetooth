@@ -52,19 +52,12 @@ func _physics_process(_delta):
 	if released == false:
 
 		if Input.is_action_pressed("ui_left"):
-			print("ui_left")
 			direction += speed * Vector2(-1,0)
 
 		if Input.is_action_pressed("ui_right"):
-			print("ui_right")
 			direction += speed * Vector2(1,0)
 
-	if Input.is_action_just_pressed("ui_down"): print("DEBUG: ui_down")
-	if Input.is_action_just_pressed("ui_select"): print("DEBUG: ui_select")
-	if Input.is_action_just_pressed("ui_accept"): print("DEBUG: ui_accept")
-
 	if (Input.is_action_just_pressed("ui_down") or Input.is_action_just_pressed("ui_accept") or Input.is_key_pressed(KEY_SPACE)) and released == false:
-			print("Release!")
 			released = true
 			mass = 95
 			gravity_scale = 0.8

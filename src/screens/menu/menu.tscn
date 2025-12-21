@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bds2b00oupc0e" path="res://src/audio/music_player/music_player.tscn" id="13"]
 [ext_resource type="PackedScene" uid="uid://cotwaps3i71sx" path="res://src/audio/sfx/sfx.tscn" id="15"]
 [ext_resource type="Texture2D" uid="uid://bn7hjfe6vs8id" path="res://src/screens/menu/splash_screen_lochzahn_candy_hat.png" id="25"]
-[ext_resource type="Texture2D" uid="uid://ccjh2pyd4ahd5" path="res://src/screens/menu/texture-button-character-card.png" id="26"]
+[ext_resource type="Texture2D" path="res://src/screens/menu/texture-button-character-card.png" id="26"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "gametitle_animations"

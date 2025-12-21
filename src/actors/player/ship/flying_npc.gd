@@ -40,7 +40,7 @@ func _process(delta):
 
 
 # Destroy ship
-func destroy(other):
+func destroy(_other):
 	# Prevent this from running again once it has been destroyed
 	if destroyed:
 		return

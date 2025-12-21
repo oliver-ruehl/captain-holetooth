@@ -70,11 +70,9 @@ var player_inventory = []
 func manage_inv(inv_action, inv_item):
 	if inv_action == "pickup":
 		player_inventory.append(inv_item)
-		print(str(inv_item) + " added to inventory")
 
 	elif inv_action == "drop":
 		player_inventory.erase(inv_item)
-		print(str(inv_item) + " removed from inventory")
 
 ##################
 # Database       #

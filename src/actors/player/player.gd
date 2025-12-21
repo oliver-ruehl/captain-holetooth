@@ -95,8 +95,7 @@ func _integrate_forces(state):
 			linear_vel.y = -JUMP_VELOCITY
 			jumping = true
 
-			# if !get_node("sfx").is_active():
-			# get_node("sfx").play("jump")
+			get_node("sfx").play("jump")
 
 			if Global.times_jumped:
 				Global.times_jumped = Global.times_jumped + 1
@@ -185,8 +184,8 @@ func _spawn_bullet():
 	get_parent().add_child(bi)
 
 	bi.linear_velocity = Vector2(800.0 * CURR_DIR.x, -80)
-	get_node("sprite/smoke").emitting = true
-	# get_node("sfx").play("schwuit")
+	#get_node("sprite/smoke").emitting = true
+	get_node("sfx").play("schwuit")
 	PhysicsServer2D.body_add_collision_exception(bi.get_rid(), get_rid())
 
 func _ready():

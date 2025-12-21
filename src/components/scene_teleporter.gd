@@ -3,21 +3,27 @@ extends Area2D
 @export_file("*.tscn") var scene_path
 
 func _ready():
-	print (str(scene_path) + ", " + str(get_path()))
 	var label = find_child("teleporter_debug_label", true, false)
 	if label:
 		label.text = str(scene_path)
 
 func _on_scene_teleporter_body_entered( body ):
-	print("Teleporting to " + str(scene_path))
 
 	if Global.player_inventory.has("Ship Wing"):
-		print("You have the wing")
+		pass
 	else:
-		print("Sorry, no wing")
+		pass
 	body.set_process(false)
 	#find_child("teleporter_debug_label").text = scene_path
 	if body.name == "player":
-		var current = str(get_tree().current_scene.name)
-		Global.last_pos[current[current.length()-1].to_int() - 3] = body.global_position
+		var current_scene_name = str(get_tree().current_scene.name)
+		var idx = -1
+		var last_char = current_scene_name.right(1)
+
+		if last_char.is_valid_int():
+			idx = last_char.to_int() - 3
+
+		if idx >= 0 and idx < Global.last_pos.size():
+			Global.last_pos[idx] = body.global_position
+
 		Transition.fade_to(str(scene_path))

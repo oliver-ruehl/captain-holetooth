@@ -5,5 +5,4 @@ extends CollisionShape2D
 # var b="textvar"
 
 func _on_teleporter_body_entered( body ):
-	print("Going to scn4...")
-
+	pass

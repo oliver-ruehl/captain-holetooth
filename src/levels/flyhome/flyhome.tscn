@@ -1,16 +1,17 @@
 [gd_scene load_steps=14 format=3 uid="uid://drojb2ehxm5hd"]
 
-[ext_resource type="PackedScene" path="res://src/levels/flyhome/player_ship/player_ship.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://b1n82yqq8d1t" path="res://src/levels/flyhome/player_ship/player_ship.tscn" id="3"]
 [ext_resource type="Texture2D" uid="uid://dua5urwt6xgkq" path="res://src/levels/flyhome/scn5-ship-bg_gradient.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://bndb1cbmsob1c" path="res://src/levels/flyhome/scn_4_scroll_bg_fg_2.png" id="5"]
 [ext_resource type="Texture2D" uid="uid://bpffq0g6barmy" path="res://src/levels/flyhome/scroll_bg_cloud_3.png" id="6"]
-[ext_resource type="PackedScene" path="res://src/screens/hud/hud.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://dx4v7gbvgwp7t" path="res://src/screens/hud/hud.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://bds2b00oupc0e" path="res://src/audio/music_player/music_player.tscn" id="8"]
 [ext_resource type="PackedScene" uid="uid://cotwaps3i71sx" path="res://src/audio/sfx/sfx.tscn" id="10"]
 [ext_resource type="PackedScene" uid="uid://c46kksksftrtm" path="res://src/actors/enemies/sugarcubes_from_hell/sugarcubes_from_hell.tscn" id="11"]
 [ext_resource type="PackedScene" uid="uid://b2hpn0t7afwvb" path="res://src/actors/enemies/soap_bubble/soap_bubble.tscn" id="12"]
 [ext_resource type="PackedScene" uid="uid://w72xwsts2hgw" path="res://src/actors/enemies/tornado/tornado.tscn" id="13"]
-[ext_resource type="PackedScene" path="res://src/levels/flyhome/goal_line/goal_line.tscn" id="14"]
+[ext_resource type="PackedScene" uid="uid://ct4jlormo05ou" path="res://src/levels/flyhome/goal_line/goal_line.tscn" id="14"]
+[ext_resource type="Script" uid="uid://ckvcucbf22a0q" path="res://src/levels/flyhome/rail.gd" id="15"]
 
 [sub_resource type="Animation" id="1"]
 length = 25.0
@@ -32,8 +33,6 @@ tracks/0/keys = {
 _data = {
 &"day_to_night": SubResource("1")
 }
-
-[ext_resource type="Script" path="res://src/levels/flyhome/rail.gd" id="15"]
 
 [node name="flyhome5" type="Node2D"]
 

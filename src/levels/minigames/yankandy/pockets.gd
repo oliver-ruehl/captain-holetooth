@@ -15,14 +15,12 @@ func _ready():
 
 func _on_pocket1_body_entered( body ):
 	if body.get_name() == "ball" && pocket_entered == false:
-		print("pocket1")
 		Global.yankandy_score_total += 200
 		pocket_entered = true
 		pass # replace with function body
 
 func _on_pocket2_body_entered( body ):
 	if body.get_name() == "ball" && pocket_entered == false:
-		print("pocket2")
 		Global.yankandy_score_total += 300
 		pocket_entered = true
 		pass # replace with function body
@@ -30,16 +28,13 @@ func _on_pocket2_body_entered( body ):
 
 func _on_pocket3_body_entered( body ):
 	if body.get_name() == "ball" && pocket_entered == false:
-		print("pocket3")
 		Global.yankandy_score_total += 600
 		pocket_entered = true
 		pass # replace with function body
 
 func _on_pocket4_body_entered( body ):
 	if body.get_name() == "ball" && pocket_entered == false:
-		print("pocket4-SUPER")
 		Global.yankandy_score_total *= 5
 		get_node("../../sfx").play("bronze_bell")
 		pocket_entered = true
 		pass # replace with function body
-

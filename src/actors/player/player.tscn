@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dixsana4xxu4" path="res://src/actors/player/player.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://75ofu5ehx1h4" path="res://src/actors/player/lochzahn_spritesheet.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://c6lcjrk0ge1sn" path="res://src/actors/player/bullet.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://cotwaps3i71sx" path="res://src/audio/sfx/sfx.tscn" id="4"]
 
 [sub_resource type="Animation" id="Animation_RESET"]
 length = 0.001
@@ -120,21 +120,6 @@ script = ExtResource("1")
 texture = ExtResource("2")
 hframes = 26
 
-[node name="smoke" type="CPUParticles2D" parent="sprite"]
-position = Vector2(20.6719, 8.6485)
-rotation = 1.45648
-emitting = false
-texture = ExtResource("3")
-lifetime = 2.0
-explosiveness = 0.1
-spread = 180.0
-gravity = Vector2(0, 9.8)
-initial_velocity_min = 20.0
-initial_velocity_max = 20.0
-angular_velocity_min = 1.0
-angular_velocity_max = 1.0
-scale_amount_min = 0.3
-
 [node name="anim" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_1")
@@ -142,6 +127,8 @@ libraries = {
 
 [node name="camera" type="Camera2D" parent="."]
 offset = Vector2(20, -20)
+zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
@@ -152,3 +139,5 @@ scale = Vector2(0.75036, 0.741892)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -2)
 shape = SubResource("1")
+
+[node name="sfx" parent="." instance=ExtResource("4")]

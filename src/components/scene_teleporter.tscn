@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlltnv5hjfudi"]
+
+[ext_resource type="Script" uid="uid://c5qceh0goq4ku" path="res://src/components/scene_teleporter.gd" id="1"]
+
+[node name="scene_teleporter" type="Area2D"]
+gravity = 98.0
+script = ExtResource("1")
+
+[connection signal="body_entered" from="." to="." method="_on_scene_teleporter_body_entered"]

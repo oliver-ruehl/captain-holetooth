@@ -9,4 +9,4 @@ func _ready():
 
 func _on_checkpoint_object_body_entered( body ):
 	if body.is_in_group("player"):
-		print("Entered Checkpoint")
+		pass

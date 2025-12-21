@@ -25,20 +25,17 @@ func _on_optionsbutton_pressed():
 # LOCALIZATION BUTTONS
 
 func _on_de_button_pressed():
-	print("DE")
 	TranslationServer.set_locale("de")
 	get_tree().reload_current_scene()
 
 func _on_en_button_pressed():
 	TranslationServer.set_locale("en")
-	print("EN")
 	get_tree().reload_current_scene()
 
 # Exit
 
 func _on_exitbutton_pressed():
 	get_tree().quit()
-	print("Exit!")
 
 
 

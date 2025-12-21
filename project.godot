@@ -18,10 +18,10 @@ config/icon="res://game_icon.png"
 
 [autoload]
 
-Global="*res://src/global.gd"
-Transition="*res://src/transition.tscn"
-Game="*res://src/game.gd"
-Database="*res://src/database.gd"
+Global="*res://src/autoload/global.gd"
+Transition="*res://src/autoload/transition.tscn"
+Game="*res://src/autoload/game.gd"
+Database="*res://src/autoload/database.gd"
 
 [display]
 

@@ -9,13 +9,13 @@ extends Node2D
 
 # Start
 func _ready():
-	
+
 	# Create connetion for TOGGLE
 	button.toggled.connect(on_toggled)
-	
+
 	# Create connection for normal button
 	button.pressed.connect(on_pressed)
-	
+
 	# Set toggle mode
 	button.toggle_mode = true
 
@@ -23,10 +23,9 @@ func _ready():
 # On button toggle
 func on_toggled(pressed):
 	if(pressed):
-		print("Front")
+		pass
 
 	else:
-		print("Back")
 		anim.play_backwards("flip_card")
 
 # On button pressed

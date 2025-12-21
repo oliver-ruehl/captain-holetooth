@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ccxs8k7yu6u82"]
 
-[ext_resource type="Script" uid="uid://cbo3qgjt4o6f0" path="res://src/transition.gd" id="1"]
+[ext_resource type="Script" uid="uid://cr54eqvhq66gq" path="res://src/autoload/transition.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://ptbxrqpv2kjx" path="res://src/screens/hud/transition.png" id="2"]
 
 [sub_resource type="Animation" id="1"]

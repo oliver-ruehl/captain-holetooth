@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://b1n82yqq8d1t"]
 
-[ext_resource type="Script" path="res://src/actors/player/ship/ship.gd" id="1"]
+[ext_resource type="Script" uid="uid://dotcwh5sb3mcg" path="res://src/actors/player/ship/ship.gd" id="1"]
 [ext_resource type="Texture2D" path="res://src/actors/player/ship/ship_spritesheet.png" id="2"]
 [ext_resource type="Texture2D" path="res://src/objects/thruster/thruster.png" id="3"]
-[ext_resource type="PackedScene" path="res://src/audio/sfx/sfx.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://cotwaps3i71sx" path="res://src/audio/sfx/sfx.tscn" id="4"]
 
 [sub_resource type="CircleShape2D" id="1"]
 radius = 30.0
