@@ -28,6 +28,28 @@ func fade_to(scene_path: String) -> void:
 	fade_overlay.queue_free()
 	is_transitioning = false
 
+func fade_to_position(position: Vector2) -> void:
+	"""Fade to black, teleport player to position within same scene, then fade back in"""
+	if is_transitioning:
+		return
+
+	is_transitioning = true
+
+	# Fade to black
+	var fade_overlay = _create_fade_overlay()
+	await _fade_in(fade_overlay, fade_duration_in)
+
+	# Teleport player
+	var player = get_tree().get_first_child_in_group("player")
+	if player:
+		player.global_position = position
+
+	# Fade from black
+	await _fade_out(fade_overlay, fade_duration_out)
+
+	fade_overlay.queue_free()
+	is_transitioning = false
+
 func change_scene_instant(scene_path: String) -> void:
 	"""Change scene without fade effect"""
 	if is_transitioning:

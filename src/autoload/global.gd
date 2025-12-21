@@ -50,6 +50,9 @@ var currentScene = null
 # Check if player has visited a scene already and store the last position on leaving/spawning
 var last_pos = [Vector2(0,0),Vector2(0,0),Vector2(0,0)]
 
+# Player spawn position when transitioning between scenes/rooms via door triggers
+var player_spawn_position = Vector2.ZERO
+
 # Array for characters the player has met
 var characters_met = ["Captain Holetooth"]
 
