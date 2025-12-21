@@ -13,8 +13,8 @@ func _input(event):
 
 # Mouse click on screen to continue
 func _on_skipbutton_pressed():
-	Transition.fade_to(level_path)
+	SceneTransition.fade_to(level_path)
 
 # On the completion of the animation, continue to the game
 func _on_animation_player_finished():
-	Transition.fade_to(level_path)
+	SceneTransition.fade_to(level_path)

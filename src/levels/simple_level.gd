@@ -9,12 +9,12 @@ func _ready():
 	for x in range(0, 100):
 		# Set tiles at y=10 (approx bottom of screen if camera is at 0,0)
 		# Using Source ID 0 (likely the only source) and atlas coord (0, 1) for "solid" tile
-		tilemap.set_cell(0, Vector2i(x, 10), 0, Vector2i(0, 1))
+		tilemap.set_cell(Vector2i(x, 10), 0, Vector2i(0, 1))
 
 		# Add some walls
 		if x == 0 or x == 99:
 			for y in range(0, 10):
-				tilemap.set_cell(0, Vector2i(x, y), 0, Vector2i(0, 1))
+				tilemap.set_cell(Vector2i(x, y), 0, Vector2i(0, 1))
 
 	# Fallback static floor in case TileMap isn't set up correctly
 	var floor_body = StaticBody2D.new()

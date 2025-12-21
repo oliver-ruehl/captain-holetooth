@@ -44,12 +44,6 @@ func _bounce_off_surface(body):
 	# Since we don't have direct contact info, we'll reflect based on velocity
 	var vel = linear_velocity
 
-	# Try to get collision normal if possible
-	var space_state = get_world_2d().direct_space_state
-	var query = PhysicsShapeQueryParameters2D.new()
-	query.shape = CollisionShape2D.new()
-	query.transform = global_transform
-
 	# Reflect velocity - we need to determine which surface was hit
 	# For simplicity, we'll check the closest point on the body to determine bounce direction
 	var closest_point = body.get_closest_point_to(global_position)

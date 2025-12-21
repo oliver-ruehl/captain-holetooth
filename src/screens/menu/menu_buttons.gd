@@ -15,7 +15,7 @@ func _ready():
 ################
 
 func _on_startbutton_pressed():
-	Transition.fade_to("res://scenes/scn2-comic-intro/scn2.tscn")
+	SceneTransition.fade_to("res://scenes/scn2-comic-intro/scn2.tscn")
 	pass # replace with function body
 
 func _on_optionsbutton_pressed():

@@ -7,5 +7,5 @@ func _ready():
 		Global.characters_met = ["Captain Holetooth"]
 
 func _on_TextureButton_pressed():
-	Transition.fade_to("res://src/screens/menu/menu.tscn")
+	SceneTransition.fade_to("res://src/screens/menu/menu.tscn")
 	print("Debug: Jumping to Menu")

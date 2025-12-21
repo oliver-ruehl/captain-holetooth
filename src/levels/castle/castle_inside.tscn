@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" path="res://src/objects/rewards/reward.tscn" id="4"]
 [ext_resource type="PackedScene" path="res://src/screens/hud/hud.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://bds2b00oupc0e" path="res://src/audio/music_player/music_player.tscn" id="6"]
-[ext_resource type="PackedScene" uid="uid://dlltnv5hjfudi" path="res://src/components/scene_teleporter.tscn" id="8"]
 [ext_resource type="PackedScene" path="res://src/objects/castle_inside/castle_inside_window.tscn" id="9"]
 
 [sub_resource type="OccluderPolygon2D" id="1"]
@@ -54,8 +53,6 @@ occluder = SubResource("1")
 
 [node name="music_player" parent="." instance=ExtResource("6")]
 
-[node name="scene_teleporter" parent="." instance=ExtResource("8")]
-
 [node name="castle_inside_window" parent="." instance=ExtResource("9")]
 
 [node name="castle_inside_window1" parent="." instance=ExtResource("9")]
@@ -64,5 +61,4 @@ occluder = SubResource("1")
 scale = Vector2(1e-05, 1e-05)
 blend_mode = 2
 
-[editable path="scene_teleporter"]
 [editable path="castle_inside_window1"]

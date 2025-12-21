@@ -12,6 +12,7 @@ layer = -1
 
 [node name="Sprite" type="Sprite2D" parent="sky"]
 modulate = Color(0.320312, 0.106354, 0.191603, 1)
+scale = Vector2(113.625, 1)
 texture = ExtResource("1")
 centered = false
 

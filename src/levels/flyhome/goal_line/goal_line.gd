@@ -9,4 +9,4 @@ func _on_goal_line_area_entered( area ):
 
 	# If the player has entered, transition to next level
 	if(groups.has("player")):
-		Transition.fade_to(level_path)
+		SceneTransition.fade_to(level_path)

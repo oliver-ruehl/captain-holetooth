@@ -42,7 +42,7 @@ func _ready():
 # -- BUTTON PRESSES --
 # Start Game
 func _on_startbutton_pressed():
-	Transition.fade_to("res://src/screens/intro/intro.tscn")
+	SceneTransition.fade_to("res://src/screens/intro/intro.tscn")
 	get_node("sfx").play("click")
 
 # Options
@@ -98,22 +98,22 @@ func _on_music_volume_value_changed( value ):
 # -- DEBUG --
 # DEBUG: Jump to scene 3
 func _on_jump_scn3_pressed():
-	Transition.fade_to("res://src/levels/forest/forest.tscn")
+	SceneTransition.fade_to("res://src/levels/forest/forest.tscn")
 
 # DEBUG: Jump to scene 4
 func _on_jump_scn4_pressed():
-	Transition.fade_to("res://src/levels/mountain/mountain.tscn")
+	SceneTransition.fade_to("res://src/levels/mountain/mountain.tscn")
 
 # DEBUG: Jump to scene 5
 func _on_jump_scn5_pressed():
-	Transition.fade_to("res://src/levels/flyhome/flyhome.tscn")
+	SceneTransition.fade_to("res://src/levels/flyhome/flyhome.tscn")
 
 # DEBUG: Jump to minigame
 func _on_jump_minigame_pressed():
-	Transition.fade_to("res://src/levels/minigames/yankandy/yankandy.tscn")
+	SceneTransition.fade_to("res://src/levels/minigames/yankandy/yankandy.tscn")
 
 func _on_jump_castle_pressed():
-	Transition.fade_to("res://src/levels/castle/castle_outside.tscn")
+	SceneTransition.fade_to("res://src/levels/castle/castle_outside.tscn")
 
 func _on_donate_button_pressed():
 	OS.shell_open("https://www.patreon.com/hirnbix")
@@ -128,7 +128,7 @@ func _on_playtime_confirm_pressed():
 
 
 func _on_charactercardsbutton_pressed():
-	Transition.fade_to("res://src/screens/character-cards/character-cards.tscn")
+	SceneTransition.fade_to("res://src/screens/character-cards/character-cards.tscn")
 
 func _on_candy_skull_button_pressed():
 	if animations:

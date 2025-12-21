@@ -19,9 +19,9 @@ config/icon="res://game_icon.png"
 [autoload]
 
 Global="*res://src/autoload/global.gd"
-Transition="*res://src/autoload/transition.tscn"
 Game="*res://src/autoload/game.gd"
 Database="*res://src/autoload/database.gd"
+SceneTransition="*res://src/autoload/scene_transition.gd"
 
 [display]
 

@@ -13,6 +13,7 @@ layer = -1
 [node name="sky" type="ParallaxLayer" parent="."]
 
 [node name="Sprite" type="Sprite2D" parent="sky"]
+scale = Vector2(26.03125, 1)
 texture = ExtResource("1")
 centered = false
 
@@ -27,32 +28,41 @@ region_rect = Rect2(0, 0, 800, 256)
 [node name="clouds" type="ParallaxLayer" parent="."]
 
 [node name="Sprite" type="Sprite2D" parent="clouds"]
+position = Vector2(30, 28)
+scale = Vector2(0.546875, 0.546875)
 texture = ExtResource("3")
 centered = false
 
 [node name="Sprite 2" type="Sprite2D" parent="clouds"]
+position = Vector2(182, 55)
+scale = Vector2(0.59375, 0.6875)
 texture = ExtResource("4")
 centered = false
 
 [node name="Sprite 3" type="Sprite2D" parent="clouds"]
+position = Vector2(348, 88)
 texture = ExtResource("3")
 centered = false
 
 [node name="Sprite 4" type="Sprite2D" parent="clouds"]
+position = Vector2(44, 120)
 texture = ExtResource("5")
 centered = false
 
 [node name="Sprite 5" type="Sprite2D" parent="clouds"]
+position = Vector2(449, 25)
 texture = ExtResource("4")
 centered = false
 
 [node name="Sprite 6" type="Sprite2D" parent="clouds"]
+position = Vector2(636, 87)
 texture = ExtResource("5")
 centered = false
 
 [node name="mount_1" type="ParallaxLayer" parent="."]
 
 [node name="Sprite" type="Sprite2D" parent="mount_1"]
+position = Vector2(1, 84)
 texture = ExtResource("6")
 centered = false
 region_rect = Rect2(0, 0, 800, 256)

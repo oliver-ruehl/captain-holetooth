@@ -33,7 +33,7 @@ func update_scores():
 	get_node(highscore_text).text = str(Game.high_score)
 
 func _on_go_to_menu_pressed():
-	Transition.fade_to("res://src/screens/menu/menu.tscn")
+	SceneTransition.fade_to("res://src/screens/menu/menu.tscn")
 
 
 # Toggles music on/off while keeping the stored volume that may have been set elsewhere
