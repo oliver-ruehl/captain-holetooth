@@ -14,7 +14,7 @@ var rc_left = null
 var rc_right = null
 var WALK_SPEED = 50
 
-var bullet_class = preload("res://src/actors/player/bullet.gd")
+var bullet_class: GDScript = preload("res://src/actors/player/bullet.gd")
 
 var destroyed = false
 
@@ -25,7 +25,6 @@ func _die():
 
 func _pre_explode():
 	# Stay there
-	clear_shapes()
 	freeze = true
 	get_node("sfx").play("cork_pop")
 
@@ -53,7 +52,7 @@ func _integrate_forces(s):
 					#lv = s.get_contact_local_normal(i)*400
 					s.angular_velocity = sign(dp.x)*33.0
 					cc.disable()
-					game.reset_bonus_score()
+					Game.reset_bonus_score()
 					get_node("sfx").play("punch")
 
 					break

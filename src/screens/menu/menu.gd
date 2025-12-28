@@ -21,8 +21,7 @@ extends Control
 @onready var music_volume_slider = get_node(music_volume_slider_path)
 
 # Animations
-@export var animations_path: NodePath
-@onready var animations = get_node(animations_path)
+var animations = null
 
 # Current Language Locale
 var current_locale = TranslationServer.get_locale()
