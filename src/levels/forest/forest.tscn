@@ -350,6 +350,7 @@ z_index = 1
 position = Vector2(184, 208)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(-136, -160)
 limit_left = 0
 limit_top = 0
 limit_right = 512
@@ -387,5 +388,5 @@ position = Vector2(350, 150)
 collision_layer = 1
 
 [node name="LevelEndTrigger" parent="." instance=ExtResource("5_srpxa")]
-position = Vector2(450, 100)
-next_level_scene = "res://src/levels/mountain/mountain.tscn"
+position = Vector2(192, 384)
+next_level_scene = "uid://5jxkm77y6wwm"
