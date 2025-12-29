@@ -1,3 +1,4 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+/legacy_version_for_reference/
