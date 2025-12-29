@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bt88mpevrdv27"
-path="res://.godot/imported/ship_float_castle.png-f87233706a94c1dc1147731e7498c290.ctex"
+path="res://.godot/imported/ship_float_castle.png-52d7863c06b1f4ea6032966fb1816d0c.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://src/objects/environment/castle_ship_floating/ship_float_castle.png"
-dest_files=["res://.godot/imported/ship_float_castle.png-f87233706a94c1dc1147731e7498c290.ctex"]
+dest_files=["res://.godot/imported/ship_float_castle.png-52d7863c06b1f4ea6032966fb1816d0c.ctex"]
 
 [params]
 

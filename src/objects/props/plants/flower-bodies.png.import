@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhpaugqcpfkwl"
-path="res://.godot/imported/flower-bodies.png-a8a3aadfa616562e4ac9889aba812e24.ctex"
+path="res://.godot/imported/flower-bodies.png-7d70408a07d0d28b54bf89abca15b9f0.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://src/objects/props/plants/flower-bodies.png"
-dest_files=["res://.godot/imported/flower-bodies.png-a8a3aadfa616562e4ac9889aba812e24.ctex"]
+dest_files=["res://.godot/imported/flower-bodies.png-7d70408a07d0d28b54bf89abca15b9f0.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4d0o1gssd1ce"
-path="res://.godot/imported/moving_platform.png-5f3043a2bc404ed11afe672a17273482.ctex"
+path="res://.godot/imported/moving_platform.png-34b9d42517e0d9ab269ecf79d5bd2ab2.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://src/objects/interactive/platforms/moving_platform.png"
-dest_files=["res://.godot/imported/moving_platform.png-5f3043a2bc404ed11afe672a17273482.ctex"]
+dest_files=["res://.godot/imported/moving_platform.png-34b9d42517e0d9ab269ecf79d5bd2ab2.ctex"]
 
 [params]
 

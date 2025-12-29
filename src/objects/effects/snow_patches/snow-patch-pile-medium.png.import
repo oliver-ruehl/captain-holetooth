@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpvy32unx0e5b"
-path="res://.godot/imported/snow-patch-pile-medium.png-c84fec19096f1c2d35db1ce08652babe.ctex"
+path="res://.godot/imported/snow-patch-pile-medium.png-6aecb928823e4714575d6a9d0dceffcf.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://src/objects/effects/snow_patches/snow-patch-pile-medium.png"
-dest_files=["res://.godot/imported/snow-patch-pile-medium.png-c84fec19096f1c2d35db1ce08652babe.ctex"]
+dest_files=["res://.godot/imported/snow-patch-pile-medium.png-6aecb928823e4714575d6a9d0dceffcf.ctex"]
 
 [params]
 

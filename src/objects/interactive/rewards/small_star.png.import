@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://43w32dkmj18i"
-path="res://.godot/imported/small_star.png-f7aff839159922092b4d70002c7fd334.ctex"
+path="res://.godot/imported/small_star.png-5443074367c6aa92c290f6115e54ca3c.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://src/objects/interactive/rewards/small_star.png"
-dest_files=["res://.godot/imported/small_star.png-f7aff839159922092b4d70002c7fd334.ctex"]
+dest_files=["res://.godot/imported/small_star.png-5443074367c6aa92c290f6115e54ca3c.ctex"]
 
 [params]
 

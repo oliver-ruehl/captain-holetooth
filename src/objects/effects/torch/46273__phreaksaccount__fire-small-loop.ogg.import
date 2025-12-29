@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://da5ovqx2yftt6"
-path="res://.godot/imported/46273__phreaksaccount__fire-small-loop.ogg-87e8c8e3b3dc048fa313b0d1515f8ee2.oggvorbisstr"
+path="res://.godot/imported/46273__phreaksaccount__fire-small-loop.ogg-c1819aba073c08f59d1711c2d43c8a8e.oggvorbisstr"
 
 [deps]
 
 source_file="res://src/objects/effects/torch/46273__phreaksaccount__fire-small-loop.ogg"
-dest_files=["res://.godot/imported/46273__phreaksaccount__fire-small-loop.ogg-87e8c8e3b3dc048fa313b0d1515f8ee2.oggvorbisstr"]
+dest_files=["res://.godot/imported/46273__phreaksaccount__fire-small-loop.ogg-c1819aba073c08f59d1711c2d43c8a8e.oggvorbisstr"]
 
 [params]
 

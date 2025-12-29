@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://x7r13aeoedjm"
-path="res://.godot/imported/cave-bodies.png-72ed7254e7938cc9df5bc6527d9fa55f.ctex"
+path="res://.godot/imported/cave-bodies.png-de4f156f284e26385a12e81295f3828c.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://src/objects/environment/cave_foliage/cave-bodies.png"
-dest_files=["res://.godot/imported/cave-bodies.png-72ed7254e7938cc9df5bc6527d9fa55f.ctex"]
+dest_files=["res://.godot/imported/cave-bodies.png-de4f156f284e26385a12e81295f3828c.ctex"]
 
 [params]
 

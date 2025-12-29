@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bok3o2uucg106"
-path="res://.godot/imported/waterdrop-0016.png-883b0826c3015c5eade3a3a80697f62d.ctex"
+path="res://.godot/imported/waterdrop-0016.png-d87357e25dfe06879b8a7957161100b1.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://src/objects/effects/waterdrops/waterdrop-0016.png"
-dest_files=["res://.godot/imported/waterdrop-0016.png-883b0826c3015c5eade3a3a80697f62d.ctex"]
+dest_files=["res://.godot/imported/waterdrop-0016.png-d87357e25dfe06879b8a7957161100b1.ctex"]
 
 [params]
 

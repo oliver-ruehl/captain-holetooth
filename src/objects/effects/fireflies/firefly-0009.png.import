@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cyd4tb06d0ipq"
-path="res://.godot/imported/firefly-0009.png-841785af2eed836974f839b5a8de1072.ctex"
+path="res://.godot/imported/firefly-0009.png-bf44d3f3c9a123917c6ce9cb5971070b.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://src/objects/effects/fireflies/firefly-0009.png"
-dest_files=["res://.godot/imported/firefly-0009.png-841785af2eed836974f839b5a8de1072.ctex"]
+dest_files=["res://.godot/imported/firefly-0009.png-bf44d3f3c9a123917c6ce9cb5971070b.ctex"]
 
 [params]
 

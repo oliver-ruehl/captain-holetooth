@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1yckmywqjkes"
-path="res://.godot/imported/tornado1.png-af64285c2c20adcbb31aadc99a3200b0.ctex"
+path="res://.godot/imported/tornado1.png-75b46c30854444f01f376066e8a6569b.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://src/objects/props/tornado/tornado1.png"
-dest_files=["res://.godot/imported/tornado1.png-af64285c2c20adcbb31aadc99a3200b0.ctex"]
+dest_files=["res://.godot/imported/tornado1.png-75b46c30854444f01f376066e8a6569b.ctex"]
 
 [params]
 

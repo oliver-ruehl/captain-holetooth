@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dy2k3fbl5fhgk"
-path="res://.godot/imported/snowball.png-7817d94ca0593213a983648579df0c62.ctex"
+path="res://.godot/imported/snowball.png-1ebc546a83d295e608c933b8cd86ff01.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://src/objects/effects/snowballs/snowball.png"
-dest_files=["res://.godot/imported/snowball.png-7817d94ca0593213a983648579df0c62.ctex"]
+dest_files=["res://.godot/imported/snowball.png-1ebc546a83d295e608c933b8cd86ff01.ctex"]
 
 [params]
 
