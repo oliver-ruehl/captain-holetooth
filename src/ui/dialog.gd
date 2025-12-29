@@ -31,7 +31,7 @@ const TEXT_WAVE         = 4
 const TEXT_BOUNCE       = 8
 const TEXT_RESET        = 0
 
-var font           = preload("res://src/fonts/dialog-berry8.tres")
+var font           = ThemeDB.fallback_font
 var font_size      = DEFAULT_FONT_SIZE
 var portrait
 var color          = Color(0,0,0)
