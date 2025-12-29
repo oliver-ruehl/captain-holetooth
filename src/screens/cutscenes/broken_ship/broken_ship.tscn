@@ -1,8 +1,8 @@
 [gd_scene load_steps=17 format=3 uid="uid://q0bg5juw7a1g"]
 
-[ext_resource type="PackedScene" uid="uid://dxmtahu56updr" path="res://src/objects/snow/simple_snow.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://dxmtahu56updr" path="res://src/objects/effects/snow/simple_snow.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://uypq073cudph" path="res://src/screens/cutscenes/broken_ship/broken_ship_scn4.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://cvujmqgg4aqbf" path="res://src/objects/snow/snow.png" id="2_2hii2"]
+[ext_resource type="Texture2D" uid="uid://cvujmqgg4aqbf" path="res://src/objects/effects/snow/snow.png" id="2_2hii2"]
 [ext_resource type="Texture2D" uid="uid://baoy8ep3lf8uq" path="res://src/screens/cutscenes/broken_ship/lochzahn_anim_001.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://cb6iq1krg7283" path="res://src/screens/cutscenes/broken_ship/lochzahn_anim_002.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://dxayqn808jiw5" path="res://src/screens/cutscenes/broken_ship/lochzahn_anim_003.png" id="5"]

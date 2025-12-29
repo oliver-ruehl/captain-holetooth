@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8ykcjijn68vg"]
+
+[ext_resource type="Texture2D" uid="uid://c4d0o1gssd1ce" path="res://src/objects/interactive/platforms/moving_platform.png" id="2"]
+
+[node name="moving_platform" type="Node2D"]
+
+[node name="platform" type="RigidBody2D" parent="."]
+freeze = true
+
+[node name="Sprite" type="Sprite2D" parent="platform"]
+texture = ExtResource("2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="platform"]
+polygon = PackedVector2Array(-88, -24, 88, -24, 88, 24, -88, 24)

@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwq1rcmq7er6d"]
-
-[ext_resource type="Texture2D" uid="uid://dpvy32unx0e5b" path="res://src/objects/snow_patches/snow-patch-pile-medium.png" id="1"]
-
-[node name="snow_patch" type="Node2D"]
-
-[node name="sprite" type="Sprite2D" parent="."]
-texture = ExtResource("1")

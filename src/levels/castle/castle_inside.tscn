@@ -3,10 +3,10 @@
 [ext_resource type="TileSet" path="res://src/levels/castle/tileset_castle_inside.tres" id="1"]
 [ext_resource type="Texture2D" uid="uid://d27870g7vxjyx" path="res://src/objects/torch/light.png" id="2"]
 [ext_resource type="PackedScene" uid="uid://player" path="res://src/actors/player/player.tscn" id="3"]
-[ext_resource type="PackedScene" path="res://src/objects/rewards/reward.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://src/objects/interactive/rewards/reward.tscn" id="4"]
 [ext_resource type="PackedScene" path="res://src/screens/hud/hud.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://bds2b00oupc0e" path="res://src/audio/music_player/music_player.tscn" id="6"]
-[ext_resource type="PackedScene" path="res://src/objects/castle_inside/castle_inside_window.tscn" id="9"]
+[ext_resource type="PackedScene" path="res://src/objects/environment/castle_inside/castle_inside_window.tscn" id="9"]
 
 [sub_resource type="OccluderPolygon2D" id="1"]
 closed = false

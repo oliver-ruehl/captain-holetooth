@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dg4uupdkox0jv"]
+
+[ext_resource type="Texture2D" uid="uid://cqsr3et54jxc1" path="res://src/objects/environment/castle_inside/castle_inside_window.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://d27870g7vxjyx" path="res://src/objects/torch/light.png" id="2"]
+
+[sub_resource type="OccluderPolygon2D" id="1"]
+closed = false
+polygon = PackedVector2Array(30.0261, -5.31822, 30.06, -13.4194, 30.1789, -14.1889, 30.5695, -14.766, 30.9771, -15.2576, 31.5545, -15.5569, 32.4037, -15.5141, 32.9811, -15.3431, 33.5075, -14.8515, 34.034, -14.2316, 34.2548, -13.4194, 41.6435, 3.31035)
+
+[node name="castle_inside_window" type="Sprite2D"]
+modulate = Color(0.463623, 0.499929, 0.5625, 1)
+texture = ExtResource("1")
+flip_h = true
+
+[node name="Light2D_window" type="PointLight2D" parent="."]
+scale = Vector2(1e-05, 1e-05)
+color = Color(0.832031, 0.583245, 0.383514, 1)
+energy = 8.09
+blend_mode = 2
+texture = ExtResource("2")
+
+[node name="LightOccluder2D_window" type="LightOccluder2D" parent="."]
+occluder = SubResource("1")
