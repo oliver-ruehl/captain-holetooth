@@ -118,6 +118,15 @@ Press R to reload scene
 Press Escape to return to menu"
 autowrap_mode = 2
 
+[node name="debug_mode_toggle" type="CheckBox" parent="options_screen/settings/Debug"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 210.0
+offset_right = 350.0
+offset_bottom = 240.0
+button_pressed = true
+text = "Debug Mode (Press R to Reset)"
+
 [node name="JumpToSceneLabel" type="Label" parent="options_screen/settings/Debug"]
 layout_mode = 0
 offset_left = 50.0
@@ -237,3 +246,4 @@ stretch_mode = 2
 [connection signal="pressed" from="options_screen/settings/Debug/JumpMinigameButton" to="." method="_on_jump_minigame_pressed"]
 [connection signal="value_changed" from="options_screen/settings/Audio/vbox/hbox/volume_slide" to="." method="_on_music_volume_value_changed"]
 [connection signal="pressed" from="options_screen/exitbutton" to="." method="_on_exitbutton_pressed"]
+[connection signal="toggled" from="options_screen/settings/Debug/debug_mode_toggle" to="." method="_on_debug_mode_toggle_toggled"]
