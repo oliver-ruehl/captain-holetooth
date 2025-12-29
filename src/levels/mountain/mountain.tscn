@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://5jxkm77y6wwm"]
 
 [ext_resource type="Script" uid="uid://bp1yi2aievuph" path="res://src/levels/simple_level.gd" id="1_x5bgk"]
-[ext_resource type="Texture2D" uid="uid://cdlh6tx58l0r1" path="res://src/areas/area_mountain/tiles_mountain.png" id="3_m7jf1"]
+[ext_resource type="Texture2D" uid="uid://cdlh6tx58l0r1" path="res://src/levels/png-tiles/tiles_mountain.png" id="3_m7jf1"]
 [ext_resource type="PackedScene" uid="uid://dhc5i2mxknfng" path="res://src/levels/mountain/parallax_mountain.tscn" id="8"]
 [ext_resource type="PackedScene" uid="uid://player" path="res://src/actors/player/player.tscn" id="10"]
 [ext_resource type="Resource" path="res://src/levels/mountain/tileset_mountain.tres" id="tileset_mountain"]

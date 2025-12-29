@@ -1,4 +1,4 @@
-[ext_resource type="Texture2D" path="res://src/areas/area_mountain/tiles_mountain.png" id="1"]
+[ext_resource type="Texture2D" path="res://src/levels/png-tiles/tiles_mountain.png" id="1"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2v1jc"]
 
