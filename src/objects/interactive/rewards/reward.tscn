@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://vq2wmqxesrh5"]
+
+[ext_resource type="PackedScene" uid="uid://dqmgrkg5fgo50" path="res://src/objects/interactive/rewards/random_coin.tscn" id="2"]
+[ext_resource type="Script" uid="uid://nlmxkap72bny" path="res://src/objects/interactive/rewards/reward.gd" id="3"]
+[ext_resource type="PackedScene" uid="uid://bhbjcbadx3ufa" path="res://src/components/persist.tscn" id="4"]
+
+[sub_resource type="CircleShape2D" id="1"]
+radius = 10.049875
+
+[node name="reward" type="Area2D"]
+z_index = 10
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("3")
+
+[node name="random_coin" parent="." instance=ExtResource("2")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -7)
+shape = SubResource("1")
+
+[node name="persist" parent="." instance=ExtResource("4")]

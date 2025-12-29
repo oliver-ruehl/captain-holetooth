@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cwfdlk75pymit" path="res://src/levels/forest/forest.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://player" path="res://src/actors/player/player.tscn" id="3"]
 [ext_resource type="Texture2D" uid="uid://bg5wtd6j8840r" path="res://src/levels/png-tiles/tileset_forest.png" id="4_2v1jc"]
-[ext_resource type="PackedScene" uid="uid://vq2wmqxesrh5" path="res://src/objects/rewards/reward.tscn" id="4_ieony"]
+[ext_resource type="PackedScene" uid="uid://vq2wmqxesrh5" path="res://src/objects/interactive/rewards/reward.tscn" id="4_ieony"]
 [ext_resource type="PackedScene" uid="uid://b8y4k5j2q1w3e" path="res://src/components/level_end_trigger.tscn" id="5_srpxa"]
 [ext_resource type="PackedScene" uid="uid://c4wwdom7a6knx" path="res://src/levels/forest/forest_parallax_bg.tscn" id="6_parallax"]
 

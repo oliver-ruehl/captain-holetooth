@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj65qnsndy6ik"]
+
+[ext_resource type="Texture2D" uid="uid://cgrvtyqr64k6t" path="res://src/objects/props/signpost/signpost_blank.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://cimjavvfcj2hf" path="res://src/objects/props/signpost/signpost-stickers/signpost_sticker_mountain.png" id="2"]
+
+[node name="signpost" type="Sprite2D"]
+texture = ExtResource("1")
+centered = false
+
+[node name="signpost_sticker" type="Sprite2D" parent="."]
+position = Vector2(6, 7)
+texture = ExtResource("2")
+centered = false
