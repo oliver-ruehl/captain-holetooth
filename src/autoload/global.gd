@@ -82,6 +82,9 @@ func manage_inv(inv_action, inv_item):
 ##################
 
 func _ready():
+	# Load debug mode from saved game data
+	debug_mode = Game.load_key("debug_mode", 1)
+
 	# Assuming Database singleton is named Database
 	score = Database.get_key("score", 0)
 

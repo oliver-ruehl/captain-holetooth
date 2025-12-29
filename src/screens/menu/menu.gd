@@ -33,6 +33,11 @@ func _ready():
 	if music_volume_slider and Global.music:
 		music_volume_slider.value = Global.music.volume * 100
 
+	# Initialize debug mode toggle if it exists
+	var debug_toggle = get_node_or_null("options_screen/settings/Debug/debug_mode_toggle")
+	if debug_toggle:
+		debug_toggle.button_pressed = (Global.debug_mode == 1)
+
 	var start_btn = get_node_or_null("menu_buttons/startbutton")
 	if start_btn:
 		start_btn.grab_focus()
@@ -133,3 +138,12 @@ func _on_candy_skull_button_pressed():
 	if animations:
 		# Play the wigglecandy animation once (avoid infinite reconnection)
 		animations.play("wigglecandy")
+
+
+# -- DEBUG MODE TOGGLE --
+# Toggle debug mode on/off (enables "R" key to reset collected rewards)
+func _on_debug_mode_toggle_toggled(toggled_on):
+	Global.debug_mode = 1 if toggled_on else 0
+	Game.save_key("debug_mode", Global.debug_mode)
+	Game.save_game()
+	print("Debug mode: ", "ON" if toggled_on else "OFF")
