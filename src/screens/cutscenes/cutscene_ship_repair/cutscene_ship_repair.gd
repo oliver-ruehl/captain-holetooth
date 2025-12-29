@@ -7,7 +7,7 @@ func _ready():
 	set_process_input(true)
 
 func _input(event):
-	if Input.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("ui_accept"):
 		_on_skipbutton_pressed()
 
 
