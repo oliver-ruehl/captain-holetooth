@@ -1,4 +1,4 @@
-extends "res://src/actors/player/ship/flying_npc.gd"
+extends "res://src/actors/common/flying_npc.gd"
 
 @onready var REWARD = preload("res://src/objects/rewards/reward.tscn")
 @onready var animation = get_node("anim_player")
